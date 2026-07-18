@@ -22,35 +22,22 @@ navbar:
     - name: 标签
       icon: fa-solid fa-tags
       url: tags/
-    - name: ChatAI
-      icon: fa-solid fa-robot
-      url: ChatAI/ # https://chat-gpt-next-web-74w5.vercel.app
     - name: 碎碎念
       icon: fa-solid fa-comment-dots
       url: artitalk/
+    - name: 归档
+      icon: fa-solid fa-archive
+      url: archives/
     - name: 关于
       icon: fa-solid fa-info-circle
       url: about/
-    - name: 更多
-      icon: fa-solid fa-angles-right
-      rows:
-      - name: 友链
-        icon: fa-solid fa-link
-        url: friends/
-      - name: 归档
-        icon: fa-solid fa-archive
-        url: archives/
-      - name: 暗黑模式 # 可自定义
-        icon: fas fa-moon # 可自定义
-        toggle: darkmode
+    - name: 暗黑模式
+      icon: fas fa-moon
+      toggle: darkmode
   search: 搜索···   # Search bar placeholder
 ############################### Navigation Bar ############################### > end
 
-# 配置友链页面
-pages:
-  # 友链页面配置
-  friends:
-    layout_scheme: simple # simple: 简单布局, traditional: 传统布局
+
 
 # 自定义页脚
 site_footer:
@@ -78,8 +65,6 @@ cover:
     others: false # can be written in front-matter 'cover: true'
   background: https://raw.githubusercontent.com/PeaceJiang/BlogImage/main/img/202306270023986.jpg #自定义封面背景，需要上传url
   logo: /img/图标.png
-  title: 舆 地 纪 要
-  subtitle: 寓形宇内复几时 曷不委心任去留
   search: 站内搜索 # search bar placeholder 搜索栏里面显示的东西
   features:
     - name: 主页
@@ -543,8 +528,8 @@ custom_css:
     # 网站页脚文字
     site_footer: '#fff'
 
-    # 卡片背景色
-    card: '#fff'
+    # 卡片背景色（带透明度）
+    card: 'rgba(255, 255, 255, 0.85)'
     # 卡片上的普通文字
     text: '#444'
 
@@ -579,8 +564,8 @@ custom_css:
     site_inner: '#eee'
     # 网站页脚文字
     site_footer: '#aaa'
-    # 卡片背景色
-    card: '#444'
+    # 卡片背景色（带透明度）
+    card: 'rgba(68, 68, 68, 0.85)'
     # 卡片上的普通文字
     text: '#eee'
 
