@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-CN,en,default">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.1'>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#6.2.0'>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="Volantis" content="6.0.0-alpha.1">
+  <meta name="Volantis" content="6.2.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://PeaceJiang.github.io/categories/3s技术/gis软件应用/"/>
+  <link rel="canonical" href="https://PeaceJiang.github.io/categories/3S技术/GIS软件应用/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
       <link rel="preconnect" href="https://unpkg.com" crossorigin>
-      <link rel='dns-prefetch' href='https://cdn.bootcdn.net'>
-      <link rel="preconnect" href="https://cdn.bootcdn.net" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
   <meta name="HandheldFriendly" content="True" >
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
@@ -29,8 +27,8 @@
   <!-- Custom Files headBegin end-->
     <link rel="shortcut icon" type='image/x-icon' href="/img/NavBar.png">
   <link rel="preload" href="/css/style.css" as="style">
-  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1761982841160/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1761982841160/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="舆地纪要" type="application/atom+xml">
@@ -45,10 +43,10 @@
 <meta property="og:site_name" content="舆地纪要">
 <meta property="og:description" content="从地表的痕迹去摸索时空的演化">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:author" content="南河三">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
     /* 首屏样式 */
     #safearea {
@@ -77,6 +75,7 @@
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
   --color-copyright-bkg: #f5f5f5;
+  --link-color: #00323c;
 }
 * {
   box-sizing: border-box;
@@ -816,6 +815,7 @@ button {
     --color-meta: rgba(191,191,191,0.871);
     --color-link: rgba(191,191,191,0.871);
     --color-copyright-bkg: #21252b;
+    --link-color: #e4e4e4;
   }
   :root:not([color-scheme]) img {
     filter: brightness(70%) !important;
@@ -888,6 +888,7 @@ button {
   --color-meta: rgba(191,191,191,0.871);
   --color-link: rgba(191,191,191,0.871);
   --color-copyright-bkg: #21252b;
+  --link-color: #e4e4e4;
 }
 [color-scheme='dark'] img {
   filter: brightness(70%) !important;
@@ -940,16 +941,19 @@ button {
     background: var(--color-site-bg) !important;
   }
 }
+[color-scheme='dark'] .friend-card.color-bk-dark {
+  filter: brightness(0.8);
+}
 @font-face {
   font-family: 'UbuntuMono';
-  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  src: url("https://unpkg.com/volantis-static@0.0.1761982841160/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
 }
 @font-face {
   font-family: 'Varela Round';
-  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
+  src: url("https://unpkg.com/volantis-static@0.0.1761982841160/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
@@ -1856,9 +1860,157 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
-  window.volantis = {}; // volantis 全局变量
+  // window.volantis = {}; // volantis 全局变量
+/**
+ * 内存安全的全局 volantis 对象实现
+ * 特性：
+ * 1. 支持 window.volantis.xxx = yyy 直观赋值语法
+ * 2. 基于 WeakMap 存储数据，自动回收内存
+ * 3. 支持属性枚举（如 Object.keys(window.volantis)）
+ * 4. 支持删除属性（delete window.volantis.xxx）
+ */
+(function initializeVolantis() {
+  // 1. 初始化 WeakMap 存储实际数据（键：volantisProxy 实例，值：属性键值对）
+  const volantisDataStore = new WeakMap();
+
+  // 2. 创建 Proxy 代理处理属性访问
+  const volantisProxy = new Proxy({}, {
+    /**
+     * 拦截属性读取（如 window.volantis.dom）
+     * @param {Object} target - 代理目标对象（仅作为占位符，不存储数据）
+     * @param {string} prop - 访问的属性名
+     * @returns {any} 属性值或 undefined
+     */
+    get(target, prop) {
+      const data = volantisDataStore.get(volantisProxy);
+      return data?.[prop]; // 使用可选链避免数据未初始化时的错误
+    },
+
+    /**
+     * 拦截属性赋值（如 window.volantis.dom = "a"）
+     * @param {Object} target - 代理目标对象
+     * @param {string} prop - 赋值的属性名
+     * @param {any} value - 赋值的属性值
+     * @returns {boolean} 赋值是否成功
+     */
+    set(target, prop, value) {
+      // 初始化数据容器（若不存在）
+      if (!volantisDataStore.has(volantisProxy)) {
+        volantisDataStore.set(volantisProxy, Object.create(null)); // 使用无原型对象避免原型污染
+      }
+      // 存储属性值
+      const data = volantisDataStore.get(volantisProxy);
+      data[prop] = value;
+      return true; // 符合 Proxy 规范，返回成功标志
+    },
+
+    /**
+     * 拦截属性删除（如 delete window.volantis.dom）
+     * @param {Object} target - 代理目标对象
+     * @param {string} prop - 要删除的属性名
+     * @returns {boolean} 删除是否成功
+     */
+    deleteProperty(target, prop) {
+      const data = volantisDataStore.get(volantisProxy);
+      if (!data || !Object.prototype.hasOwnProperty.call(data, prop)) {
+        return false; // 属性不存在，删除失败
+      }
+      delete data[prop];
+      // 若数据为空，清理 WeakMap 条目（优化内存回收）
+      if (Object.keys(data).length === 0) {
+        volantisDataStore.delete(volantisProxy);
+      }
+      return true;
+    },
+
+    /**
+     * 拦截属性枚举（如 Object.keys(window.volantis)）
+     * @param {Object} target - 代理目标对象
+     * @returns {string[]} 可枚举的属性名数组
+     */
+    ownKeys(target) {
+      const data = volantisDataStore.get(volantisProxy);
+      return data ? Object.keys(data) : [];
+    },
+
+    /**
+     * 拦截属性描述符查询（如 Object.getOwnPropertyDescriptor）
+     * @param {Object} target - 代理目标对象
+     * @param {string} prop - 属性名
+     * @returns {PropertyDescriptor|undefined} 属性描述符
+     */
+    getOwnPropertyDescriptor(target, prop) {
+      const data = volantisDataStore.get(volantisProxy);
+      if (!data || !Object.prototype.hasOwnProperty.call(data, prop)) {
+        return undefined;
+      }
+      return {
+        value: data[prop],
+        writable: true,
+        enumerable: true,
+        configurable: true
+      };
+    }
+  });
+
+  // 3. 挂载到 window 对象，暴露全局访问入口
+  Object.defineProperty(window, 'volantis', {
+    value: volantisProxy,
+    writable: true, // 允许后续手动设置为 null 触发清理
+    configurable: true,
+    enumerable: true
+  });
+
+})();
   volantis.debug = "env"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
+  /******************** volantis.getFunctionHash ********************************/
+// 简易文本哈希
+volantis.simpleTextHash= (str) => {
+  // 初始哈希值：选择质数5381（DJB2算法推荐的起始值）
+  let hash = 5381;
+  // 遍历每个字符，更新哈希值
+  for (let i = 0; i < str.length; i++) {
+    // 等价于 hash = hash * 33 + charCode（位移运算更高效）
+    hash = (hash << 5) + hash + str.charCodeAt(i);
+    // 避免数值过大溢出（可选：取模2^32，模拟32位无符号整数）
+    hash = hash & hash; // 或 hash >>> 0（转换为无符号）
+  }
+  // 转换为十六进制字符串，确保至少8位（补前导零）
+  return hash.toString(16).padStart(8, '0');
+}
+
+// 获取函数内容的哈希
+volantis.getFunctionHash= (func) => {
+    // 提取函数源码字符串
+    const funcStr = func.toString();
+    // 计算哈希值
+    return volantis.simpleTextHash(funcStr);
+}
+
+// 测试示例
+//function sampleFunc(a, b) {
+//    return a * b + 10;
+//}
+//console.log(volantis.getFunctionHash(sampleFunc)); // 输出函数源码的MD5哈希
+  /******************** volantis.EventListener ********************************/
+  // 事件监听器 see: /source/js/app.js
+  volantis.EventListener = {}
+  // 这里存放pjax切换页面时将被移除的事件监听器
+  volantis.EventListener.list = []
+  //构造方法
+  function volantisEventListener(type, f, ele) {
+    this.type = type
+    this.f = f
+    this.ele = ele
+  }
+  // 移除事件监听器
+  volantis.EventListener.remove = () => {
+    volantis.EventListener.list.forEach(function (i) {
+      i.ele.removeEventListener(i.type, i.f, false)
+    })
+    volantis.EventListener.list = [];
+  }
   /******************** volantis.dom.$ ********************************/
   // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
   function volantisDom(ele) {
@@ -1891,8 +2043,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       return this.ele
     }
     // ==============================================================
-    this.ele.on = (c, f) => {
+    // 参数 r 为 true 表示pjax切换页面时事件监听器将被移除，false不移除
+    this.ele.on = (c, f, r = 1) => {
       this.ele.addEventListener(c, f, false)
+      if (r) {
+        volantis.EventListener.list.push(new volantisEventListener(c, f, this.ele))
+      }
       return this.ele
     }
     this.ele.click = (f, r) => {
@@ -1936,14 +2092,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       }
     };
     this.push = (fn, name, setRequestAnimationFrame = true) => {
+      if (typeof fn !== 'function') return;
       let myfn = fn
       if (setRequestAnimationFrame) {
         myfn = () => {
           volantis.requestAnimationFrame(fn)
         }
       }
-      var f = new Item(myfn, name);
-      this.list.push(f);
+      name = name || volantis.getFunctionHash(fn)
+      const idx = this.list.findIndex(item => item.name === name);
+      if (idx !== -1) {
+        this.list[idx] = new Item(myfn, name);
+        return;
+      }
+      this.list.push(new Item(myfn, name));
     };
     this.remove = (name) => {
       for (let index = 0; index < this.list.length; index++) {
@@ -1956,7 +2118,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // 构造一个可以run的对象
     function Item(fn, name) {
       // 函数名称
-      this.name = name || fn.name;
+      this.name = name || volantis.getFunctionHash(fn);
       // run方法
       this.run = () => {
         try {
@@ -1967,6 +2129,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       };
     }
   }
+  /******************** Pjax ********************************/
+  // /layout/_plugins/pjax/index.ejs
+  // volantis.pjax.send(callBack[,"callBackName"]) 传入pjax:send回调函数
+  // volantis.pjax.push(callBack[,"callBackName"]) 传入pjax:complete回调函数
+  // volantis.pjax.error(callBack[,"callBackName"]) 传入pjax:error回调函数
+  volantis.pjax = {};
+  volantis.pjax.method = {
+    complete: new RunItem(),
+    error: new RunItem(),
+    send: new RunItem(),
+  };
+  volantis.pjax = Object.assign(volantis.pjax, {
+    push: volantis.pjax.method.complete.push,
+    error: volantis.pjax.method.error.push,
+    send: volantis.pjax.method.send.push,
+  });
   /******************** RightMenu ********************************/
   // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
   // 可在 volantis.mouseEvent 处获取右键事件
@@ -2055,7 +2233,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.import = {
     jQuery: () => {
       if (typeof jQuery == "undefined") {
-        return volantis.js("https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js")
+        return volantis.js("https://unpkg.com/jquery@3.7.1/dist/jquery.min.js")
       } else {
         return new Promise(resolve => {
           resolve()
@@ -2063,18 +2241,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       }
     }
   }
+  /********************** 节流和防抖 ********************************/
+  // 节流函数：确保指定时间内仅执行一次 时间戳版本的节流实现
+  volantis.throttle=(func, delay = 200) => {
+    let lastTime = 0;
+    return function (...args) {
+      const now = Date.now();
+      if (now - lastTime >= delay) {
+        func.apply(this, args);
+        lastTime = now;
+      }
+    };
+  };
+  // 防抖函数 setTimeout实现
+  volantis.debounce=(func, wait = 200) => {
+    let timer = null;
+    return function () {
+      if (timer) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(() => {
+        func.apply(this, arguments)
+        timer = null
+      }, wait)
+    };
+  };
   /********************** requestAnimationFrame ********************************/
   // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
   // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
   volantis.requestAnimationFrame = (fn) => {
     if (!window.requestAnimationFrame) {
-      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || function (callback) {
+        return window.setTimeout(callback, 1000 / 60);
+      };
     }
-    window.requestAnimationFrame(fn)
-  }
+    return window.requestAnimationFrame(fn);
+  };
   /************************ layoutHelper *****************************************/
   volantis.layoutHelper = (helper, html, opt) => {
-    opt = Object.assign({ clean: false}, opt)
+    opt = Object.assign({ clean: false, pjax: true }, opt)
     function myhelper(helper, html, clean) {
       volantis.tempDiv = document.createElement("div");
       volantis.tempDiv.innerHTML = html;
@@ -2087,6 +2292,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       }
     }
     myhelper(helper, html, opt.clean)
+    if (opt.pjax) {
+      volantis.pjax.push(() => {
+        myhelper(helper, html, opt.clean)
+      }, "layoutHelper-" + helper)
+    }
   }
   /****************************** 滚动事件处理 ****************************************/
   volantis.scroll = {
@@ -2115,7 +2325,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     )
   }
   volantis.scroll.offsetHeight = function () {
-    return Math.max(
+    return Math.min(
       document.body.offsetHeight,
       document.documentElement.offsetHeight,
       document.body.clientHeight,
@@ -2211,36 +2421,95 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg";
+    img.src = "https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/avatar/round/3442075.svg";
     img.onerror = null;
   }
   function errorImgCover(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg";
+    img.src = "https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/cover/76b86c0226ffd.svg";
     img.onerror = null;
   }
   /******************************************************************************/
-</script>
+// Hack Interval
+// 保存原生定时器方法
+const nativeSetTimeout = window.setTimeout;
+const nativeSetInterval = window.setInterval;
+const nativeClearTimeout = window.clearTimeout;
+const nativeClearInterval = window.clearInterval;
 
+// 存储活动定时器ID的数组
+volantis.activeTimeout = [];
+volantis.activeInterval = [];
+
+// 重写setTimeout：执行后自动移除ID
+window.setTimeout = function(callback, delay, ...args) {
+  // 包装回调函数，执行后从列表移除ID
+  const wrappedCallback = function(...innerArgs) {
+    try {
+      // 执行原始回调（保持this指向和参数传递）
+      return callback.apply(this, innerArgs);
+    } finally {
+      // 无论回调是否报错，均移除ID
+      const index = volantis.activeTimeout.indexOf(timerId);
+      if (index !== -1) volantis.activeTimeout.splice(index, 1);
+    }
+  };
+  
+  // 调用原生setTimeout获取ID
+  const timerId = nativeSetTimeout(wrappedCallback, delay, ...args);
+  // 添加到活动列表
+  volantis.activeTimeout.push(timerId);
+  return timerId;
+};
+
+// 重写setInterval：需显式清除才移除ID
+window.setInterval = function(callback, delay, ...args) {
+  const timerId = nativeSetInterval(callback, delay, ...args);
+  volantis.activeInterval.push(timerId);
+  return timerId;
+};
+
+// 重写清除方法：同步移除ID列表记录
+window.clearTimeout = function(timerId) {
+  nativeClearTimeout(timerId);
+  const index = volantis.activeTimeout.indexOf(timerId);
+  if (index !== -1) volantis.activeTimeout.splice(index, 1);
+};
+
+window.clearInterval = function(timerId) {
+  nativeClearInterval(timerId);
+  const index = volantis.activeInterval.indexOf(timerId);
+  if (index !== -1) volantis.activeInterval.splice(index, 1);
+};
+volantis.getActiveInterval = function () {
+  return [...volantis.activeInterval];
+}
+volantis.getActiveTimeout = function () {
+  return [...volantis.activeTimeout];
+}
+volantis.clearAllTimers = function (){
+  volantis.getActiveInterval().forEach(function(i) {
+    clearInterval(i);
+  });
+  volantis.getActiveTimeout().forEach(function(i) {
+    clearTimeout(i);
+  });
+}
+volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
+  /******************************************************************************/
+</script>
 <script>
-  window.pdata={}
-  pdata.ispage=false;
-  pdata.commentPath="";
-  pdata.commentPlaceholder="";
-  pdata.commentConfig={};
   volantis.GLOBAL_CONFIG ={
     root: '/',
     debug: "env",
-    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1784342613723),
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/image/2659360.svg","topic":"https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/10433048.png","project":"https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png"},
+    lastupdate: new Date(1784343591916),
     cdn: {
-      izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
-      izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
-      fancybox_css: 'https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/4.0.31/fancybox.min.css',
-      fancybox_js: 'https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js'
+      izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
+      izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
+      fancybox_css: 'https://unpkg.com/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css',
+      fancybox_js: 'https://unpkg.com/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js'
     },
     sidebar: {
-      for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
-      for_post: ["blogger","toc","related_post"],
       webinfo: {
         lastupd: {
           enable: true,
@@ -2276,6 +2545,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
   }
 </script>
+
+
+  
+    <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"舆地纪要","url":"https://PeaceJiang.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"南河三","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://PeaceJiang.github.io/","sameAs":["https://github.com/volantis-x"],"description":"从地表的痕迹去摸索时空的演化"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://PeaceJiang.github.io/","name":"舆地纪要"}},{"@type":"ListItem","position":2,"item":{"@id":"https://PeaceJiang.github.io/categories/GIS软件应用/","name":"GIS软件应用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"舆地纪要","url":"https://PeaceJiang.github.io/","keywords":null,"description":"从地表的痕迹去摸索时空的演化","author":{"@type":"Person","name":"南河三","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://PeaceJiang.github.io/","description":"从地表的痕迹去摸索时空的演化"},"publisher":{"@type":"Organization","name":"舆地纪要","url":"https://PeaceJiang.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://PeaceJiang.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"从地表的痕迹去摸索时空的演化","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"南河三","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://PeaceJiang.github.io/"},"publisher":{"@type":"Organization","name":"舆地纪要","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  
   <!-- import head_end begin -->
   <!-- import head_end end -->
   <!-- Custom Files headEnd begin-->
@@ -2293,7 +2567,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
-      <ul class='switcher nav-list-h m-phone'>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
         <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self" title="comment"></a></li>
         
           <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self" title="toc"></a></li>
@@ -2575,6 +2849,65 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div id="l_body">
       <div id="l_cover">
   
+    
+      <!-- see: /layout/_partial/scripts/_ctrl.ejs -->
+      <div id="none" class='cover-wrapper  focus' style="display: none;">
+        
+  <div id="parallax-window"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+      <img no-lazy class='logo' src='/img/%E5%9B%BE%E6%A0%87.png'/>
+    
+    
+      <p class="title">Volantis</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              active-action="action-home">
+              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f4d6.svg'><p>主页</p>
+            </a>
+          
+            <a href="/categories/"
+              
+              
+              active-action="action-categories">
+              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f5c3.svg'><p>分类</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              active-action="action-tags">
+              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f3f7.svg'><p>标签</p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              active-action="action-about">
+              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f497.svg'><p>关于</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+    
+  
 </div>
 
       <div id="safearea">
@@ -2599,74 +2932,131 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable"  itemscope itemtype="http://schema.org/Article" >
+            
+
+<!-- 文章预览卡片容器，使用schema.org的Article类型进行结构化数据标记 -->
+<div class="post post-v3 white-box reveal shadow floatable" itemscope itemtype="http://schema.org/Article">
+  <!-- 标记文章的主要页面链接 -->
   <link itemprop="mainEntityOfPage" href="https://peacejiang.github.io/2023/06/25/VSCode与ArcGIS的结合/">
+  
+  <!-- 隐藏的发布者信息，使用schema.org的Organization类型 -->
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="舆地纪要">
   </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="舆地纪要">
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="name" content="VSCode与ArcGIS的结合">
     <meta itemprop="description" content="从地表的痕迹去摸索时空的演化">
   </span>
+
+  <!-- 显示置顶图标（如果计算得出需要显示） -->
   
   
+  <!-- 显示文章头图（如果存在） -->
   
+    <!-- 如果没有头图，使用主题配置的默认图片作为结构化数据 -->
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
+
+  <!-- 一般场景 -->
   
+    <!-- 文章标题区域，使用schema.org的name和headline属性 -->
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/06/25/VSCode%E4%B8%8EArcGIS%E7%9A%84%E7%BB%93%E5%90%88/"  itemprop="url">
-        VSCode与ArcGIS的结合
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
+      <h2 class="article-title" itemprop="name headline">
+        <a href="/2023/06/25/VSCode%E4%B8%8EArcGIS%E7%9A%84%E7%BB%93%E5%90%88/" itemprop="url">
+          VSCode与ArcGIS的结合
+        </a>
+      </h2>
     
+    <!-- 文章摘要/描述区域，使用schema.org的articleBody属性 -->
+    <div class="md article-desc" itemprop="articleBody">
       
-        前言ArcGIS是常用的GIS桌面软件，其自带的arcpy包是使用Python开发常用的闭源站点包，因此若要使用arcpy则必须使用ArcGIS自带的python解释器。在ArcGIS for desktop中，ArcMap的python版本为2.7，为python2系列。随着新一代桌面端GIS软件ArcGIS Pro的推出，python3也以conda虚拟环境的形式结合到Pro中，本文介绍...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+        <!-- 若既没有摘要也没有描述，则使用文章内容 -->
         
-          
-          <a class='avatar' href='/'><img src='https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg">
-            <meta itemprop="name" content="南河三">
-            <meta itemprop="url" content="/">
-          </span>
+          <!-- 主题启用自动摘要时，显示截断后的内容（200字符） -->
+          前言ArcGIS是常用的GIS桌面软件，其自带的arcpy包是使用Python开发常用的闭源站点包，因此若要使用arcpy则必须使用ArcGIS自带的python解释器。在ArcGIS for desktop中，ArcMap的python版本为2.7，为python2系列。随着新一代桌面端GIS软件ArcGIS Pro的推出，python3也以conda虚拟环境的形式结合到Pro中，本文介绍...
         
-        <time itemprop="dateCreated datePublished" datetime="2023-06-25T14:01:53+08:00">2023-06-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/3S%E6%8A%80%E6%9C%AF/">3S技术</a><span class="sep"></span><a class="category-link" href="/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/">GIS软件应用</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/3S%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">3S技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/" itemprop="url"><span itemprop="name">GIS软件应用</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/06/25/VSCode%E4%B8%8EArcGIS%E7%9A%84%E7%BB%93%E5%90%88/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
       
     </div>
-  
+    
+    <!-- 元信息区域（作者、日期、分类、标签等），仅在需要显示其中至少一项时才渲染 -->
+    
+      <div class="meta-v3" line_style='solid'>
+        <div>
+          <!-- 显示作者信息（如果主题设置启用） -->
+          
+            <a class='avatar' href='/'><img src='https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg'></a>
+          
+            <!-- 作者结构化数据，使用schema.org的Person类型 -->
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg">
+              <meta itemprop="name" content="南河三">
+              <meta itemprop="url" content="/">
+            </span>
 
+          
+          <!-- 显示文章更新时间，使用schema.org的dateModified属性 -->
+          <time class="update-time" itemprop="dateModified" 
+                datetime="2026-07-18T10:13:20+08:00" 
+                title="2026年7月18日">
+            2026-07-18
+          </time>
+          
+          <!-- 显示文章分类（如果需要显示） -->
+          
+            <span class="dot"></span>
+            <a class="category-link" href="/categories/3S%E6%8A%80%E6%9C%AF/">3S技术</a><span class="sep"></span><a class="category-link" href="/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/">GIS软件应用</a>
+            
+            <!-- 分类的结构化数据 -->
+            
+              <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <a href="/categories/3S%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">3S技术</span></a>
+              </span>
+            
+              <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <a href="/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/" itemprop="url"><span itemprop="name">GIS软件应用</span></a>
+              </span>
+            
+          
+          
+          <!-- 显示文章标签（如果需要显示） -->
+          
+            <span class="dot"></span>
+            <a class="category-link" href="/tags/ArcGIS/">ArcGIS</a><span class="sep"></span><a class="category-link" href="/tags/Arcpy/">Arcpy</a><span class="sep"></span><a class="category-link" href="/tags/VSCode/">VSCode</a><span class="sep"></span><a class="category-link" href="/tags/%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91/">脚本开发</a>
+            
+            <!-- 标签的结构化数据 -->
+            
+              <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <a href="/tags/ArcGIS/" itemprop="url"><span itemprop="name">ArcGIS</span></a>
+              </span>
+            
+              <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <a href="/tags/VSCode/" itemprop="url"><span itemprop="name">VSCode</span></a>
+              </span>
+            
+              <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <a href="/tags/Arcpy/" itemprop="url"><span itemprop="name">Arcpy</span></a>
+              </span>
+            
+              <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <a href="/tags/%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91/" itemprop="url"><span itemprop="name">脚本开发</span></a>
+              </span>
+            
+          
+        </div>
+        
+        <!-- 阅读更多按钮 -->
+        
+          <div>
+            <a class='readmore' href='/2023/06/25/VSCode%E4%B8%8EArcGIS%E7%9A%84%E7%BB%93%E5%90%88/'>
+              阅读全文
+            </a>
+          </div>
+        
+      </div>
+    
+  
 </div>
 
           </div>
@@ -2674,78 +3064,127 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable"  itemscope itemtype="http://schema.org/Article" >
+            
+
+<!-- 文章预览卡片容器，使用schema.org的Article类型进行结构化数据标记 -->
+<div class="post post-v3 white-box reveal shadow floatable" itemscope itemtype="http://schema.org/Article">
+  <!-- 标记文章的主要页面链接 -->
   <link itemprop="mainEntityOfPage" href="https://peacejiang.github.io/2023/06/09/ArcGIS-Pro-三维数据可视化/">
+  
+  <!-- 隐藏的发布者信息，使用schema.org的Organization类型 -->
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="舆地纪要">
   </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="舆地纪要">
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="name" content="ArcGIS Pro 三维数据可视化">
     <meta itemprop="description" content="从地表的痕迹去摸索时空的演化">
   </span>
+
+  <!-- 显示置顶图标（如果计算得出需要显示） -->
   
   
+  <!-- 显示文章头图（如果存在） -->
   
+    <!-- 如果没有头图，使用主题配置的默认图片作为结构化数据 -->
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1761982841160/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
+
+  <!-- 一般场景 -->
   
+    <!-- 文章标题区域，使用schema.org的name和headline属性 -->
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/06/09/ArcGIS-Pro-%E4%B8%89%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"  itemprop="url">
-        ArcGIS Pro 三维数据可视化
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
+      <h2 class="article-title" itemprop="name headline">
+        <a href="/2023/06/09/ArcGIS-Pro-%E4%B8%89%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" itemprop="url">
+          ArcGIS Pro 三维数据可视化
+        </a>
+      </h2>
     
+    <!-- 文章摘要/描述区域，使用schema.org的articleBody属性 -->
+    <div class="md article-desc" itemprop="articleBody">
       
-        数据数据源为上海市局部建筑面数据，通过区域汇总得到建筑面的格网数据，属性值代表格网内建筑的平均楼层高度（不代表绝对高度），分级方式为自然间断点法，原数据如下图：
+        <!-- 若既没有摘要也没有描述，则使用文章内容 -->
+        
+          <!-- 主题启用自动摘要时，显示截断后的内容（200字符） -->
+          数据数据源为上海市局部建筑面数据，通过区域汇总得到建筑面的格网数据，属性值代表格网内建筑的平均楼层高度（不代表绝对高度），分级方式为自然间断点法，原数据如下图：
 
 三维可视化流程在视图-转换中选择转局部场景
 
 然后会弹出三维视图，三维视图左边会有两个图层组，3D图层组、2D图层组。转换后数据一开始在2D图层组，如果需要三维可视化需要拖入到3D图层组。同时，也可以在2D图层组中加入底图数据，如...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
         
-          
-          <a class='avatar' href='/'><img src='https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg">
-            <meta itemprop="name" content="南河三">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-06-09T20:46:57+08:00">2023-06-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/3S%E6%8A%80%E6%9C%AF/">3S技术</a><span class="sep"></span><a class="category-link" href="/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/">GIS软件应用</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/3S%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">3S技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/" itemprop="url"><span itemprop="name">GIS软件应用</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/06/09/ArcGIS-Pro-%E4%B8%89%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
       
     </div>
-  
+    
+    <!-- 元信息区域（作者、日期、分类、标签等），仅在需要显示其中至少一项时才渲染 -->
+    
+      <div class="meta-v3" line_style='solid'>
+        <div>
+          <!-- 显示作者信息（如果主题设置启用） -->
+          
+            <a class='avatar' href='/'><img src='https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg'></a>
+          
+            <!-- 作者结构化数据，使用schema.org的Person类型 -->
+            <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="image" content="https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg">
+              <meta itemprop="name" content="南河三">
+              <meta itemprop="url" content="/">
+            </span>
 
+          
+          <!-- 显示文章更新时间，使用schema.org的dateModified属性 -->
+          <time class="update-time" itemprop="dateModified" 
+                datetime="2026-07-18T10:13:20+08:00" 
+                title="2026年7月18日">
+            2026-07-18
+          </time>
+          
+          <!-- 显示文章分类（如果需要显示） -->
+          
+            <span class="dot"></span>
+            <a class="category-link" href="/categories/3S%E6%8A%80%E6%9C%AF/">3S技术</a><span class="sep"></span><a class="category-link" href="/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/">GIS软件应用</a>
+            
+            <!-- 分类的结构化数据 -->
+            
+              <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <a href="/categories/3S%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">3S技术</span></a>
+              </span>
+            
+              <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <a href="/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/" itemprop="url"><span itemprop="name">GIS软件应用</span></a>
+              </span>
+            
+          
+          
+          <!-- 显示文章标签（如果需要显示） -->
+          
+            <span class="dot"></span>
+            <a class="category-link" href="/tags/ArcGIS/">ArcGIS</a><span class="sep"></span><a class="category-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">数据可视化</a>
+            
+            <!-- 标签的结构化数据 -->
+            
+              <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <a href="/tags/ArcGIS/" itemprop="url"><span itemprop="name">ArcGIS</span></a>
+              </span>
+            
+              <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" itemprop="url"><span itemprop="name">数据可视化</span></a>
+              </span>
+            
+          
+        </div>
+        
+        <!-- 阅读更多按钮 -->
+        
+          <div>
+            <a class='readmore' href='/2023/06/09/ArcGIS-Pro-%E4%B8%89%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/'>
+              阅读全文
+            </a>
+          </div>
+        
+      </div>
+    
+  
 </div>
 
           </div>
@@ -2768,12 +3207,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile ">
+
+<section class="widget blogger desktop mobile shadow floatable blur pjax">
   <div class='content'>
     
       
         <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg'/>
+          <img no-lazy src='https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg' alt='avatar' />
         </a>
       
     
@@ -2840,138 +3280,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-  
-  <section class="widget category desktop">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/3S%E6%8A%80%E6%9C%AF/" href="/categories/3S%E6%8A%80%E6%9C%AF/"
-            active-action="action-categories3SE68A80E69CAF"
-            ><div class='name'>3S技术</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/" href="/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"
-            active-action="action-categories3SE68A80E69CAFGISE8BDAFE4BBB6E5BA94E794A8"
-            ><div class='name'>GIS软件应用</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" href="/categories/%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/"
-            active-action="action-categoriesE58D9AE5AEA2E6B58BE8AF95"
-            ><div class='name'>博客测试</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBA"
-            ><div class='name'>计算机</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/SQL/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/SQL/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBASQL"
-            ><div class='name'>SQL</div><div class='badge'>(3)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/ArcGIS/" style="font-size: 19px; color: #777">ArcGIS</a> <a href="/tags/Arcpy/" style="font-size: 14px; color: #999">Arcpy</a> <a href="/tags/SQL%E7%AC%94%E8%AE%B0/" style="font-size: 24px; color: #555">SQL笔记</a> <a href="/tags/VSCode/" style="font-size: 14px; color: #999">VSCode</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 14px; color: #999">数据可视化</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 14px; color: #999">测试</a> <a href="/tags/%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91/" style="font-size: 14px; color: #999">脚本开发</a> <a href="/tags/%E8%B0%83%E6%95%B4/" style="font-size: 14px; color: #999">调整</a>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop">
+<section class="widget desktop mobile shadow floatable blur pjax">
   
   <header>
     
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
+      <i class="fa-solid fa-clock fa-fw" aria-hidden="true"></i><span class='name'>最近更新</span>
     
   </header>
 
 
   <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>6 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2026-07-18 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-<section class="widget desktop mobile">
-  
-  <header>
-    
-      <i class="fa-solid fa-clock WISTERIA fa-fw" aria-hidden="true"></i><span class='name'>最近更新</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/04/22/test-site/"><div class="item"><time>2026-07-18</time><span>博客测试</span></div><span>test_site</span></a></li><li><a class="widget-last" href="/2023/06/25/VSCode%E4%B8%8EArcGIS%E7%9A%84%E7%BB%93%E5%90%88/"><div class="item"><time>2026-07-18</time><span>3S技术</span></div><span>VSCode与ArcGIS的结合</span></a></li><li><a class="widget-last" href="/2023/09/11/SQL%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9ADML%E6%95%B0%E6%8D%AE%E6%93%8D%E7%BA%B5%E8%AF%AD%E8%A8%80/"><div class="item"><time>2026-07-18</time><span>计算机</span></div><span>SQL第二章：DML数据操纵语言</span></a></li><li><a class="widget-last" href="/2023/09/11/SQL%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9ADQL%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/"><div class="item"><time>2026-07-18</time><span>计算机</span></div><span>SQL第三章：DQL数据查询语言</span></a></li><li><a class="widget-last" href="/2023/08/08/SQL%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9ADDL%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80/"><div class="item"><time>2026-07-18</time><span>计算机</span></div><span>SQL第一章：DDL数据定义语言</span></a></li></ul>
+    <widget class="widget-wrapper} recent post-list"><div class="widget-body fs14"><a class="item title" href="/2023/04/22/test-site/"><span class="title">test_site</span></a><a class="item title" href="/2023/06/25/VSCode%E4%B8%8EArcGIS%E7%9A%84%E7%BB%93%E5%90%88/"><span class="title">VSCode与ArcGIS的结合</span></a><a class="item title" href="/2023/09/11/SQL%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9ADML%E6%95%B0%E6%8D%AE%E6%93%8D%E7%BA%B5%E8%AF%AD%E8%A8%80/"><span class="title">SQL第二章：DML数据操纵语言</span></a><a class="item title" href="/2023/09/11/SQL%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9ADQL%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/"><span class="title">SQL第三章：DQL数据查询语言</span></a><a class="item title" href="/2023/08/08/SQL%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9ADDL%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80/"><span class="title">SQL第一章：DDL数据定义语言</span></a><a class="item title" href="/2023/06/09/ArcGIS-Pro-%E4%B8%89%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"><span class="title">ArcGIS Pro 三维数据可视化</span></a></div></widget>
   </div>
 </section>
 
@@ -2979,9 +3300,68 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-<div class="widget-sticky">
+<div class="widget-sticky pjax">
 
 </div>
+
+
+<!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <!-- Custom Files side begin -->
   
@@ -2989,6 +3369,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<pjax>
+<script>
+  window.pdata={}
+  pdata.ispage=false;
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  pdata.commentConfig={};
+  //  see: /layout/_partial/scripts/_ctrl.ejs
+  
+    // header
+    var l_header=document.getElementById("l_header");
+    
+    l_header.classList.add("show");
+    
+    
+      // cover
+      var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
+      var scroll_down=document.getElementById('scroll-down');
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
+    
+  
+</script>
+</pjax>
         </div>
         
   
@@ -3030,13 +3438,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.1" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#6.2.0" target="_blank" class="codename">Volantis</a>
         作为主题
       
     
@@ -3072,7 +3480,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   
-  volantis.css("https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+  volantis.css("https://unpkg.com/@fortawesome/fontawesome-free@6.6.0/css/all.min.css");
   
   
   
@@ -3082,7 +3490,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 <!-- internal -->
-
+<!-- 这里不能使用 Hexo 内置的 helper: js(theme.cdn.volantis_app) ， 会导致多加一个 config.site_root -->
 <script src="/js/app.js"></script>
 
 
@@ -3185,6 +3593,7 @@ applyCustomDarkModeSettings();
 document.addEventListener("DOMContentLoaded", ()=>{
   volantis.requestAnimationFrame(bindToggleButton)
 });
+volantis.pjax.push(bindToggleButton);
 
 const darkModelListeners={
   dark:(mediaQueryList )=>{
@@ -3222,6 +3631,12 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       }
     
     
+      const fpostsjs = document.getElementById('fposts-api');
+      if (fpostsjs != undefined && typeof FpostsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/fposts.js")
+      }
+    
+    
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
         volantis.js("/js/plugins/tags/contributors.js")
@@ -3229,12 +3644,16 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
   };
   loadIssuesJS()
+  volantis.pjax.push(()=>{
+    loadIssuesJS();
+  })
+
 </script>
 
 
 
 
-  <script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.1.0/lazyload.min.js"></script>
+  <script defer src="https://unpkg.com/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -3255,6 +3674,9 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   document.addEventListener('DOMContentLoaded', function () {
     lazyLoadInstance.update();
   });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
 </script>
 
 
@@ -3270,7 +3692,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 	hoverDelay: 0
   };
 </script>
-<script defer src="https://unpkg.com/volantis-static@0.0.1660614606622/libs/flying-pages/flying-pages.min.js"></script>
+<script defer src="https://unpkg.com/volantis-static@0.0.1761982841160/libs/flying-pages/flying-pages.min.js"></script>
 
 
 
@@ -3283,7 +3705,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       <script>
   volantis.layoutHelper("comments",`<div id="waline"><i class="fa-solid fa-cog fa-spin fa-fw fa-2x"></i></div>`)
   
-  function p_waline() {
+  function pjax_waline() {
     if(!document.querySelector("#waline"))return;
     let locale = {};
     let path = pdata.commentPath;
@@ -3292,38 +3714,32 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       let defaultPath = '';
       path = defaultPath || decodeURI(window.location.pathname);
     }
-    if(pagePlaceholder.length != 0) {
+    if (pagePlaceholder.length != 0) {
       locale.placeholder = pagePlaceholder;
     }
 
     try {
-      Waline.init(Object.assign(Object.assign({"path":null,"placeholder":"随便说点什么吧！！！不填信息也是完全没问题的～o(=•ェ•=)m \\nPS：不支持图片哦~~~","serverURL":"https://comment.peacejiang.ac.cn","imageUploader":{"fileName":null,"tokenName":null,"api":null,"token":null,"resp":null},"pageview":true,"comment":true,"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","visitor":true,"lang":"zh-CN","dark":[{"light":"light"},{"dark":"dark"}],"login":"enable","wordLimit":0,"pageSize":10,"highlight":true,"meta":["nick","mail"],"requiredMeta":[]}, {
+      init(Object.assign(Object.assign({"path":null,"placeholder":"随便说点什么吧！！！不填信息也是完全没问题的～o(=•ェ•=)m \\nPS：不支持图片哦~~~","serverURL":"https://comment.peacejiang.ac.cn","imageUploader":{"fileName":null,"tokenName":null,"api":null,"token":null,"resp":null},"pageview":true,"comment":true,"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","visitor":true,"lang":"zh-CN","dark":[{"light":"light"},{"dark":"dark"}],"login":"enable","wordLimit":0,"pageSize":10,"highlight":true,"meta":["nick","mail"],"requiredMeta":[]}, {
         el: '#waline',
         path: path,
         // https://github.com/volantis-x/hexo-theme-volantis/issues/713
         
         locale,
-      }),pdata.commentConfig));
+      }), pdata.commentConfig));
     } catch (error) {
-      alert(`Waline ${error}`)
+      alert(`Waline ${error}`);
     }
-    fancybox_waline()
+    fancybox_waline();
   }
 
   function fancybox_waline() {
-    if(typeof VolantisFancyBox === "undefined") {
-      const checkFancyBox = setInterval(() => {
-        if(typeof VolantisFancyBox === "undefined") return;
-        clearInterval(checkFancyBox);
-        VolantisFancyBox.bind('#waline .wl-content img:not(.wl-emoji)');
-      })
-    } else {
-      VolantisFancyBox.bind('#waline .wl-content img:not(.wl-emoji)');
-    }
+    const fancyBoxInstance = new VolantisFancyBox();
+    fancyBoxInstance.bind('#waline .wl-content img:not(.wl-emoji)');
   }
 
-  volantis.css('https://cdn.bootcdn.net/ajax/libs/waline/2.6.3/waline.min.css')
-  volantis.js('https://cdn.bootcdn.net/ajax/libs/waline/2.6.3/waline.min.js').then(p_waline)
+  volantis.css('https://unpkg.com/@waline/client@3.3.2/dist/waline.css')
+  volantis.js('https://unpkg.com/@waline/client@3.3.2/dist/waline.js').then(pjax_waline)
+  volantis.pjax.push(pjax_waline);
 </script>
     
 
@@ -3391,14 +3807,15 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  function p_highlightjs_copyCode(){
+  function pjax_highlightjs_copyCode(){
     if (!(document.querySelector(".highlight .code pre") ||
       document.querySelector(".article pre code"))) {
       return;
     }
     VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
   }
-  volantis.requestAnimationFrame(p_highlightjs_copyCode)
+  volantis.requestAnimationFrame(pjax_highlightjs_copyCode)
+  volantis.pjax.push(pjax_highlightjs_copyCode)
 
 </script>
 
@@ -3454,6 +3871,10 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     volantis.js('/js/plugins/parallax.js').then(()=>{
       parallax()
     })
+    volantis.pjax.send(()=>{
+      clearInterval(IntervalParallax)
+    },"clearIntervalParallax");
+    volantis.pjax.push(parallax);
   }
 </script>
 
@@ -3463,15 +3884,15 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   <script>
   function load_swiper() {
     if (!document.querySelectorAll(".swiper-container")[0]) return;
-    volantis.css("https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css");
-    volantis.js("https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js").then(() => {
-      p_swiper();
+    volantis.css("https://unpkg.com/swiper@11.1.14/swiper-bundle.min.css");
+    volantis.js("https://unpkg.com/swiper@11.1.14/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
     });
   }
 
   load_swiper();
 
-  function p_swiper() {
+  function pjax_swiper() {
     volantis.swiper = new Swiper('.swiper-container', {
       slidesPerView: 'auto',
       spaceBetween: 8,
@@ -3488,27 +3909,52 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
+  volantis.pjax.push(() => {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    if (typeof volantis.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
 </script>
 
 
 
   <script>
-  volantis.css("https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.min.css");
-  volantis.js("https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js").then(() => {
+  // https://github.com/CodeByZach/pace/issues/531
+  window.paceOptions = {
+    eventLag: {
+	  lagThreshold: 30,
+  	},
+    ajax: { 
+      ignoreURLs: ['signalr', '__browserLink', 'browserLinkSignalR'], 
+      trackWebSockets: false 
+    } 
+  }
+  // 引入脚本
+  volantis.css("https://unpkg.com/pace-js@1.2.4/themes/blue/pace-theme-minimal.css");
+  volantis.js("https://unpkg.com/pace-js@1.2.4/pace.min.js").then(() => {
     Pace.options.restartOnPushState = false;
+    volantis.pjax.send(Pace.restart,"Pace.restart");
+    volantis.pjax.push(()=>{setTimeout(()=>{Pace.stop()},1200)},"Pace.stop");
     // 阅读进度
-    volantis.scroll.push(() => {
+    volantis.scroll.push(volantis.debounce(() => {
       Pace.stop();
       Pace.trigger('start');
       Pace.bar.update(volantis.scroll.progress() * 100);
       document.body.className = document.body.className.replaceAll("pace-running ","");
-    },"阅读进度")
+    }),"阅读进度")
     // todo：配置项开关, 哪些页面添加阅读进度
   })
 </script>
 
 
 
+<!-- pjax 标签必须存在于所有页面 否则 pjax error -->
+<pjax>
+
+</pjax>
 
 <script>
   function listenSidebarTOC() {
@@ -3557,7 +4003,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     volantis.activateNavIndex = 0
     activateNavByIndex(navItems[volantis.activateNavIndex])
     if (targets[0]) {
-      volantis.scroll.push(() => {
+      volantis.scroll.push(volantis.debounce(() => {
         if (targets[0].getBoundingClientRect().top >= 0) {
           volantis.activateNavIndex = 0
         } else if (targets[targets.length - 1].getBoundingClientRect().top < 0) {
@@ -3573,7 +4019,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           }
         }
         activateNavByIndex(navItems[volantis.activateNavIndex])
-      })
+      }),"sidebar-toc")
     }
 
     // 方案二：
@@ -3621,6 +4067,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   document.addEventListener("DOMContentLoaded", () => {
     volantis.requestAnimationFrame(listenSidebarTOC)
   });
+  volantis.pjax.push(listenSidebarTOC,"listenSidebarTOC");
 </script>
 
 
@@ -3643,11 +4090,139 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"舆地纪要","url":"https://PeaceJiang.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"南河三","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://PeaceJiang.github.io/","sameAs":["https://github.com/volantis-x"],"description":"从地表的痕迹去摸索时空的演化"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://PeaceJiang.github.io/","name":"舆地纪要"}},{"@type":"ListItem","position":2,"item":{"@id":"https://PeaceJiang.github.io/categories/GIS软件应用/","name":"GIS软件应用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"舆地纪要","url":"https://PeaceJiang.github.io/","keywords":null,"description":"从地表的痕迹去摸索时空的演化","author":{"@type":"Person","name":"南河三","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://PeaceJiang.github.io/","description":"从地表的痕迹去摸索时空的演化"},"publisher":{"@type":"Organization","name":"舆地纪要","url":"https://PeaceJiang.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://PeaceJiang.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"从地表的痕迹去摸索时空的演化","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"南河三","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://PeaceJiang.github.io/"},"publisher":{"@type":"Organization","name":"舆地纪要","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+
+
+      
+        <!--
+  pjax重载区域接口：
+  1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
+  2.  script[data-pjax]
+  3.  .pjax-reload script
+  4.  .pjax
+-->
 
 
 
+<script src="https://unpkg.com/pjax@0.2.8/pjax.min.js"></script>
 
+<script>
+// 性能监控与降级控制
+const performanceMonitor = {
+  slowThreshold: 800,     // 慢请求阈值(毫秒)
+  slowCount: 0,           // 连续慢请求计数
+  maxSlowAllowed: 1,      // 允许的最大连续慢请求数
+  requestStartTime: 0,    // 请求开始时间戳
+
+  // 记录请求开始时间
+  start() {
+    this.requestStartTime = Date.now();
+  },
+
+  // 计算请求耗时并判断
+  check() {
+    const duration = Date.now() - this.requestStartTime;
+    
+    if (duration > this.slowThreshold) {
+      this.slowCount++;
+    } else {
+      this.slowCount = 0;    // 耗时正常，重置计数
+    }
+  },
+  // 测试结果
+  res(){
+    // 连续慢请求达到阈值，强制刷新
+    if (this.slowCount >= this.maxSlowAllowed) {         
+      return true;    // 需要降级
+    }
+    return false;     // 无需降级
+  }
+};
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+        // 这里的 selectors 需要保证每个页面都含有相同的数目
+        selectors: [
+          "head title",
+          "head meta[name=keywords]",
+          "head meta[name=description]",
+          
+          "#l_main",
+          "#pjax-header-nav-list",
+          ".pjax",
+          "pjax", // <pjax></pjax> 标签
+          // 临时测试
+          "meta[name=robots]",
+          "link[rel=canonical]",
+          "meta[property='og:title']",
+          "meta[property='og:description']",
+          "meta[property='og:url']",
+          "meta[property='og:image']",
+          "script[type='application/ld+json']",
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 900,
+        
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+      performanceMonitor.start();  // 请求开始计时
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var excludeList = [""];
+        if (excludeList[0] != "") {
+          excludeList.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+        if (performanceMonitor.res()){
+          window.location.href = targetUrl;
+        }
+      } catch (error) {}
+
+      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 降级控制检测
+      performanceMonitor.check()
+      // 这里的 script 不需要保证每个页面都含有相同的数目
+      document.querySelectorAll('script[data-pjax], .pjax-reload script').forEach(e=>{
+        const code = e.text || e.textContent || e.innerHTML || '';
+        const script = document.createElement('script');
+        Object.keys(e.attributes).forEach(i=>{
+          script.setAttribute(e.attributes[i].nodeName,e.attributes[i].nodeValue)
+        })
+        if (code) {
+          script.appendChild(document.createTextNode(code));
+        }
+        e.parentNode.replaceChild(script, e);
+      });
+
+      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.complete.start();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      if(volantis.debug === "pjax") {
+        console.error(e);
+        console.log('pjax error: \n' + JSON.stringify(e));
+      }else{
+        // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+        volantis.pjax.method.error.start();
+        window.location.href = e.triggerElement.href;
+      }
+    });
+</script>
+
+      
     </div>
     <!-- import body_end begin-->
     <!-- import body_end end-->

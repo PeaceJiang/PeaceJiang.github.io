@@ -24,6 +24,7 @@
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
   --color-copyright-bkg: #f5f5f5;
+  --link-color: #00323c;
 }
 * {
   box-sizing: border-box;
@@ -763,6 +764,7 @@ button {
     --color-meta: rgba(191,191,191,0.871);
     --color-link: rgba(191,191,191,0.871);
     --color-copyright-bkg: #21252b;
+    --link-color: #e4e4e4;
   }
   :root:not([color-scheme]) img {
     filter: brightness(70%) !important;
@@ -835,6 +837,7 @@ button {
   --color-meta: rgba(191,191,191,0.871);
   --color-link: rgba(191,191,191,0.871);
   --color-copyright-bkg: #21252b;
+  --link-color: #e4e4e4;
 }
 [color-scheme='dark'] img {
   filter: brightness(70%) !important;
@@ -887,16 +890,19 @@ button {
     background: var(--color-site-bg) !important;
   }
 }
+[color-scheme='dark'] .friend-card.color-bk-dark {
+  filter: brightness(0.8);
+}
 @font-face {
   font-family: 'UbuntuMono';
-  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  src: url("https://unpkg.com/volantis-static@0.0.1761982841160/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
 }
 @font-face {
   font-family: 'Varela Round';
-  src: url("https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
+  src: url("https://unpkg.com/volantis-static@0.0.1761982841160/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
