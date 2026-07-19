@@ -3,6 +3,7 @@
 ## Themes: https://hexo.io/themes/
 theme: volantis 
 
+
 ############################### Navigation Bar ############################### > start
 # 注意事项：建议规范全站路径 URL 最后带一个 "/" 例如 "about/"
 navbar:
@@ -65,6 +66,8 @@ cover:
     others: false # can be written in front-matter 'cover: true'
   background: https://raw.githubusercontent.com/PeaceJiang/BlogImage/main/img/202306270023986.jpg #自定义封面背景，需要上传url
   logo: /img/图标.png
+  title: ""
+  subtitle: ""
   search: 站内搜索 # search bar placeholder 搜索栏里面显示的东西
   features:
     - name: 主页
@@ -82,27 +85,8 @@ cover:
 ############################### Cover ############################### > end
 
 ############################### artitalk ############################### > start
-# 配置过程请参考：https://artitalk.js.org/doc.html
-# 使用过旧版本的请修改Leancloud shuoshuo class部分列名：https://artitalk.js.org/release.html
-# 除appID和appKEY外均为选填项
 artitalk:
-  # Set `plugins: ["artitalk"]` to enable in front-matter
-  # 不支持 Pjax
-  # 配置项按照yml格式继续填写即可
-  enable: true
-  appId: '7BqCt1sWT4V7yAgrtcILMyTF-MdYXbMMI' # your appID
-  appKey: 'vNWJM1lsVMlDxHmf03xdlzWP' # your appKEY
-  serverURL: https://talk.peacejiang.ac.cn #leancloud绑定的api访问域名，使用国际版的话不需要填写
-  lang: zh # 语言设置，zh为汉语，en为英语，es为西班牙语。默认为汉语
-  pageSize: 5 #每页说说的显示数量
-  shuoPla: "絮絮叨叨絮絮叨···＞﹏＜···" #在编辑说说的输入框中的占位符
-  avatarPla: https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg #自定义头像url的输入框的占位符
-  motion: 1 #加载动画的开关，1为开，0为关，默认为开
-  # bgImg: #说说输入框背景图片url
-  # color1: #说说背景颜色1&按钮颜色1
-  # color2: #说说背景颜色2&按钮颜色2
-  # color3: #说说字体颜色
-  # cssUrl: #自定义css接口
+  enable: false
 
 ############################### artitalk ############################### > end
 
@@ -112,7 +96,7 @@ sidebar:
   # 主页、分类、归档等独立页面
   for_page: [blogger, category, tagcloud, webinfo, lastupdate] #侧边栏的组成部分
   # layout: docs/post 这类文章页面
-  for_post: [blogger, toc, related_post]
+  for_post: [blogger, toc]
   # 侧边栏组件库
   widget_library:
     # ---------------------------------------
@@ -219,7 +203,7 @@ sidebar:
         icon: fa-solid fa-clock WISTERIA
         title: 最近更新
     related_posts:
-        enable: true
+        enable: false
         title: 相关文章
         icon: fa-solid fa-bookmark
         max_count: 3
@@ -255,50 +239,34 @@ plugins:
     enable: true
     
 ############################### Comments ############################### > start
-# comments:
-#   service: giscus
-#   # giscus
-#   # https://giscus.app
-#   # https://github.com/laymonage/giscus
-#   giscus:
-#     # 以下配置按照 yml 格式增删填写即可
-#      repo: PeaceJiang/comments #库的名字
-#      repo-id: R_kgDOJr9R3A #库id，标红框的第一个
-#      category: Announcements
-#      category-id: DIC_kwDOJr9R3M4CXAfn #目录id，标红框的第二个
-#      mapping: "pathname"
-#      reactions-enabled: "1"
-#      emit-metadata: "0"
-#      lang: zh-CN
-#      theme:
-#        light: "light" # https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
-#        dark: "dark" # https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/dark.css
-
 comments:  
-  service: waline
-  waline:
-    # enable: true
-    js: https://unpkg.com/@waline/client@v2/dist/waline.js
-    serverURL: https://comment.peacejiang.ac.cn # https://test-xi-peach.vercel.app # Waline的服务端地址（必填）
-    visitor: true   # 文章访问量统计
-    lang: zh-CN     # 语言，默认zh-CN
-    dark: 
-      - light: "light" # https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
-      - dark: "dark" # https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/dark.css
-    login: enable   # 登录模式状态，默认值enable 
-    wordLimit: 0    # 评论字数限制，0为不限制，默认值为0
-    pageSize: 10    # 评论列表分页，数字为条数，默认值10
-    highlight: true # 代码高亮，默认true
-    meta: ['nick', 'mail'] # 评论者相关属性，默认['nick', 'mail', 'link']
-    requiredMeta: [] #设置评论者属性必填项，默认[]（即匿名）
-    placeholder: '随便说点什么吧！！！不填信息也是完全没问题的～o(=•ェ•=)m \nPS：不支持图片哦~~~' # 评论框占位提示符，默认'欢迎评论'
+  service: giscus
+  # giscus
+  # https://giscus.app
+  # https://github.com/laymonage/giscus
+  giscus:
+    # 以下配置按照 yml 格式增删填写即可
+    repo: PeaceJiang/comments
+    repo-id: R_kgDOJr9R3A
+    category: Announcements
+    category-id: DIC_kwDOJr9R3M4CXAfn
+    mapping: "pathname"
+    reactions-enabled: "1"
+    emit-metadata: "0"
+    lang: zh-CN
+    theme:
+      light: "light"
+      dark: "dark"
 
+# Waline 已弃用，使用 Giscus
+# comments:  
+#   service: waline
+#   ...
+
+# Disqus 已弃用
 # comments:  
 #   service: disqus
-#   disqus: 
-#     enable: true
-#     shortname: peacejiang
-#     count: true
+#   ...
   
   
 
@@ -352,7 +320,7 @@ article:
       # 相关文章，需要安装插件 (for layout: post)
       # npm i hexo-related-popular-posts
       related_posts:
-        enable: true
+        enable: false
         title: 相关文章
         icon: fa-solid fa-bookmark
         max_count: 3
@@ -477,9 +445,9 @@ custom_css:
       weight: normal
       style: normal
     codefont:
-      fontfamily: 'Menlo, UbuntuMono, Monaco'
-      name: 'Monaco'
-      url: volantis-static/media/fonts/Monaco/Monaco.ttf # https://gcore.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
+      fontfamily: 'Menlo, UbuntuMono, FiraCode'
+      name: 'FiraCode'
+      url: volantis-static/media/fonts/FiraCode/FiraCode-Regular.ttf # https://gcore.jsdelivr.net/gh/volantis-x/cdn-fonts/FiraCode/FiraCode-Regular.ttf
       weight: normal
       style: normal
   font_smoothing: true # font-smoothing for webkit 抗锯齿
