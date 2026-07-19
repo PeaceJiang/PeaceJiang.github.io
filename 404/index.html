@@ -214,14 +214,6 @@ button {
     backdrop-filter: saturate(200%) blur(20px);
   }
 }
-@supports (backdrop-filter: blur(20px)) {
-  .blur#comments {
-    backdrop-filter: unset;
-  }
-}
-#layoutHelper-comments {
-  margin-bottom: 100px;
-}
 .shadow {
   box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
@@ -2504,7 +2496,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/image/2659360.svg","topic":"https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/10433048.png","project":"https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png"},
-    lastupdate: new Date(1784360997131),
+    lastupdate: new Date(1784422334123),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -3412,44 +3404,53 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
       <script>
-  volantis.layoutHelper("comments",`<div id="waline"><i class="fa-solid fa-cog fa-spin fa-fw fa-2x"></i></div>`)
-  
-  function pjax_waline() {
-    if(!document.querySelector("#waline"))return;
-    let locale = {};
-    let path = pdata.commentPath;
-    let pagePlaceholder = pdata.commentPlaceholder || "随便说点什么吧！！！不填信息也是完全没问题的～o(=•ェ•=)m \nPS：不支持图片哦~~~";
-    if (path.length == 0) {
-      let defaultPath = '';
-      path = defaultPath || decodeURI(window.location.pathname);
-    }
-    if (pagePlaceholder.length != 0) {
-      locale.placeholder = pagePlaceholder;
+  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
+
+  volantis.giscus = {};
+
+  function check_giscus() {
+    if (volantis.dark.mode === "dark") {
+      volantis.giscus.Theme = 'dark';
+    } else {
+      volantis.giscus.Theme = 'light';
     }
 
-    try {
-      init(Object.assign(Object.assign({"path":null,"placeholder":"随便说点什么吧！！！不填信息也是完全没问题的～o(=•ェ•=)m \\nPS：不支持图片哦~~~","serverURL":"https://comment.peacejiang.ac.cn","imageUploader":{"fileName":null,"tokenName":null,"api":null,"token":null,"resp":null},"pageview":true,"comment":true,"js":"https://unpkg.com/@waline/client@3/dist/waline.js","visitor":true,"lang":"zh-CN","dark":[{"light":"light"},{"dark":"dark"}],"login":"enable","wordLimit":0,"pageSize":10,"highlight":true,"meta":["nick","mail"],"requiredMeta":[]}, {
-        el: '#waline',
-        path: path,
-        // https://github.com/volantis-x/hexo-theme-volantis/issues/713
-        
-        locale,
-      }), pdata.commentConfig));
-    } catch (error) {
-      alert(`Waline ${error}`);
-    }
-    fancybox_waline();
+    return document.getElementById("giscus_container");
   }
 
-  function fancybox_waline() {
-    const fancyBoxInstance = new VolantisFancyBox();
-    fancyBoxInstance.bind('#waline .wl-content img:not(.wl-emoji)');
+  function pjax_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"PeaceJiang/comments","repo-id":"R_kgDOJr9R3A","category":"Announcements","category-id":"DIC_kwDOJr9R3M4CXAfn","mapping":"pathname","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN"},pdata.commentConfig)
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    Object.keys(cfg).forEach(k=>{
+      if (k != "theme") {
+        script.setAttribute('data-'+k, cfg[k]);
+      }
+    })
+    script.setAttribute('data-theme', volantis.giscus.Theme);
+    script.setAttribute('crossorigin', "anonymous");
+    HEAD.appendChild(script);
   }
 
-  volantis.css('https://unpkg.com/@waline/client@3.3.2/dist/waline.css')
-  volantis.js('https://unpkg.com/@waline/client@3.3.2/dist/waline.js').then(pjax_waline)
-  volantis.pjax.push(pjax_waline);
+  function dark_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+
+    const message = {
+      setConfig: {
+        theme: volantis.giscus.Theme
+      }
+    };
+    const giscusIframe = document.querySelector('iframe.giscus-frame');
+    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  pjax_giscus();
+  volantis.pjax.push(pjax_giscus);
+  volantis.dark.push(dark_giscus);
 </script>
+
     
 
 

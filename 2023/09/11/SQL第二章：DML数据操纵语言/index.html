@@ -215,14 +215,6 @@ button {
     backdrop-filter: saturate(200%) blur(20px);
   }
 }
-@supports (backdrop-filter: blur(20px)) {
-  .blur#comments {
-    backdrop-filter: unset;
-  }
-}
-#layoutHelper-comments {
-  margin-bottom: 100px;
-}
 .shadow {
   box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
@@ -2505,7 +2497,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1761982841160/media/placeholder/image/2659360.svg","topic":"https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/10433048.png","project":"https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png"},
-    lastupdate: new Date(1784360997131),
+    lastupdate: new Date(1784422334123),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -3018,20 +3010,6 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
             
 
 
-<div class="new-meta-item browse">
-  <a class='notlink'>
-    <p>
-      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span data-path="/2023/09/11/SQL%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9ADML%E6%95%B0%E6%8D%AE%E6%93%8D%E7%BA%B5%E8%AF%AD%E8%A8%80/" class="waline-pageview-count">
-        <i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i>
-      </span>
-        
-      <span>次浏览</span>
-    </p>
-  </a>
-</div>
-
 
           
         
@@ -3085,14 +3063,6 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
        <!-- 参考资料、相关资料等 -->
       
        <!-- 相关文章 -->
-      
-        
-  <div class="related_posts">
-    <section class='header'>
-      <i class="fa-solid fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
-    </section>
-    <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\2023\08\08\SQL第一章：DDL数据定义语言\" title="SQL第一章：DDL数据定义语言" rel="bookmark "><span class="title">SQL第一章：DDL数据定义语言</span><span class="excerpt">数据定义语言（DDL）：Data Definition Language，用来定义数据库的对象，如数据表、视图、索引等。</span></a><a class="item" href="\2023\09\11\SQL第三章：DQL数据查询语言\" title="SQL第三章：DQL数据查询语言" rel="bookmark "><span class="title">SQL第三章：DQL数据查询语言</span><span class="excerpt">DQL：Data Query Language，用来查询数据库中的数据。</span></a></div></section></div>
       
       <!-- 版权声明组件 -->
       
@@ -3797,44 +3767,53 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
       <script>
-  volantis.layoutHelper("comments",`<div id="waline"><i class="fa-solid fa-cog fa-spin fa-fw fa-2x"></i></div>`)
-  
-  function pjax_waline() {
-    if(!document.querySelector("#waline"))return;
-    let locale = {};
-    let path = pdata.commentPath;
-    let pagePlaceholder = pdata.commentPlaceholder || "随便说点什么吧！！！不填信息也是完全没问题的～o(=•ェ•=)m \nPS：不支持图片哦~~~";
-    if (path.length == 0) {
-      let defaultPath = '';
-      path = defaultPath || decodeURI(window.location.pathname);
-    }
-    if (pagePlaceholder.length != 0) {
-      locale.placeholder = pagePlaceholder;
+  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
+
+  volantis.giscus = {};
+
+  function check_giscus() {
+    if (volantis.dark.mode === "dark") {
+      volantis.giscus.Theme = 'dark';
+    } else {
+      volantis.giscus.Theme = 'light';
     }
 
-    try {
-      init(Object.assign(Object.assign({"path":null,"placeholder":"随便说点什么吧！！！不填信息也是完全没问题的～o(=•ェ•=)m \\nPS：不支持图片哦~~~","serverURL":"https://comment.peacejiang.ac.cn","imageUploader":{"fileName":null,"tokenName":null,"api":null,"token":null,"resp":null},"pageview":true,"comment":true,"js":"https://unpkg.com/@waline/client@3/dist/waline.js","visitor":true,"lang":"zh-CN","dark":[{"light":"light"},{"dark":"dark"}],"login":"enable","wordLimit":0,"pageSize":10,"highlight":true,"meta":["nick","mail"],"requiredMeta":[]}, {
-        el: '#waline',
-        path: path,
-        // https://github.com/volantis-x/hexo-theme-volantis/issues/713
-        
-        locale,
-      }), pdata.commentConfig));
-    } catch (error) {
-      alert(`Waline ${error}`);
-    }
-    fancybox_waline();
+    return document.getElementById("giscus_container");
   }
 
-  function fancybox_waline() {
-    const fancyBoxInstance = new VolantisFancyBox();
-    fancyBoxInstance.bind('#waline .wl-content img:not(.wl-emoji)');
+  function pjax_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"PeaceJiang/comments","repo-id":"R_kgDOJr9R3A","category":"Announcements","category-id":"DIC_kwDOJr9R3M4CXAfn","mapping":"pathname","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN"},pdata.commentConfig)
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    Object.keys(cfg).forEach(k=>{
+      if (k != "theme") {
+        script.setAttribute('data-'+k, cfg[k]);
+      }
+    })
+    script.setAttribute('data-theme', volantis.giscus.Theme);
+    script.setAttribute('crossorigin', "anonymous");
+    HEAD.appendChild(script);
   }
 
-  volantis.css('https://unpkg.com/@waline/client@3.3.2/dist/waline.css')
-  volantis.js('https://unpkg.com/@waline/client@3.3.2/dist/waline.js').then(pjax_waline)
-  volantis.pjax.push(pjax_waline);
+  function dark_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+
+    const message = {
+      setConfig: {
+        theme: volantis.giscus.Theme
+      }
+    };
+    const giscusIframe = document.querySelector('iframe.giscus-frame');
+    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  pjax_giscus();
+  volantis.pjax.push(pjax_giscus);
+  volantis.dark.push(dark_giscus);
 </script>
+
     
 
 
