@@ -1,16 +1,19 @@
 ---
-title: 认识一下
+title:
 date: 2023-06-06 13:51:40
 layout: docs
 seo_title: 关于
 bottom_meta: false
-sidebar: [toc]
+sidebar: false
 twikoo:
   placeholder: 有什么想对我说的呢？
 ---
+{% banner 南河三 寓形宇内复几时，曷不委心任去留 avatar:https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg bg:https://res.xaox.cc/gh/cdn-x/xaoxuu@main/posts/20250706163949681.webp %}
+{% endbanner %}
+
 {% note quote green:: 在广阔的世界里谋求和谐 %}
 
-## 博客内容
+{% quot el:h3 prefix:solar:planet-bold-duotone 博客内容 %}
 
 该博客名为**《舆地纪要》**，“**舆地**”一词源自中国古代地理学之名，“**纪要**”一词代表笔记，该博客旨在分享笔者学习关于地理学的一些所学、所思、所感。
 
@@ -18,11 +21,11 @@ twikoo:
 - [人文地理学](https://zh.wikipedia.org/wiki/人文地理学)：利用定性和定量的分析方法，探究人类活动与地表环境之间的相互作用关系。如经济、文化、政治的地理差异及形成原因。
 - 3S集成：[地理信息科学（GIS）](https://zh.wikipedia.org/wiki/地理信息科学)、[遥感 （RS）](https://zh.wikipedia.org/wiki/遥感)与[卫星导航系统（GNSS）](https://zh.wikipedia.org/wiki/卫星导航系统)合称地理学的3S技术，由传统地理学与计算机科学结合的交叉学科，应用于地理数据管理、地理制图、空间分析与地理知识发现等方面。改博客中主要分享3S技术的研究、技术以及相关软件的学习笔记。
 
-## 作者介绍
+{% quot el:h3 prefix:solar:planet-bold-duotone 作者介绍 %}
 
 地理学背景及地质行业从业者，研究过时空数据挖掘，解决城市问题辅助城市规划。先从事地质行业，智能找矿预测，高光谱遥感等方面。
 
-## 学习背景
+{% quot el:h3 prefix:solar:planet-bold-duotone 学习背景 %}
 
 {% timeline %}
 

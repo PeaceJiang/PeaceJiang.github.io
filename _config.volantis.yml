@@ -52,7 +52,7 @@ site_footer:
     - icon: fab fa-github
       url: https://github.com/PeaceJiang #你的github地址
   info: 
-  copyright: "由[Hexo](https://hexo.io/zh-cn/)驱动 | [腾讯云](https://cloud.tencent.com/) | [聚合图床](https://www.superbed.cn/)提供支持<br>[Copyright © 2023 舆地纪要](/)"
+  copyright: "由[Hexo](https://hexo.io/zh-cn/)驱动 | [腾讯云](https://cloud.tencent.com/) | [聚合图床](https://www.superbed.cn/)提供支持<br>[Copyright © 2023-2026 舆地纪要](/)"
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: 
   # 自定义封面
@@ -497,7 +497,7 @@ custom_css:
     site_footer: '#fff'
 
     # 卡片背景色（带透明度）
-    card: 'rgba(255, 255, 255, 0.85)'
+    card: 'rgba(255, 255, 255, 0.6)'
     # 卡片上的普通文字
     text: '#444'
 
@@ -562,7 +562,7 @@ custom_css:
     # 夜间图片亮度
     brightness: 70%
   body:
-    effect: [shadow,floatable] # [shadow, floatable, blur]
+    effect: [shadow,floatable,blur] # [shadow, floatable, blur]
     highlight:
       language: true # show language of codeblock
       copy_btn: true
@@ -667,4 +667,27 @@ rightmenus:
       - {id: 'source_theme', name: '主题源码', icon: 'fa-solid fa-code-branch', link: 'https://github.com/volantis-x/hexo-theme-volantis/', group: 'link'}
     darkMode: 
       - {id: 'darkMode', name: '暗黑模式', icon: 'fa-solid fa-moon', event: 'volantis.dark.toggle()', group: 'darkMode'}
-############################### 右键菜单 ############################### > end
+############################### 右键菜单 ############################### > 
+
+######## Tag Plugins ########
+tag_plugins:
+  # {% Image %}
+  Image:
+    fancybox: true
+  icon:
+    # 留空时，图标和文字颜色相同
+    default_color: accent # theme, accent, red, orange, yellow, green, cyan, blue, purple
+    tag_plugins:
+  emoji:
+    default: https://gcore.jsdelivr.net/gh/cdn-x/emoticons/qq/{name}.gif
+    twemoji: https://gcore.jsdelivr.net/gh/twitter/twemoji/assets/svg/{name}.svg
+    qq: https://gcore.jsdelivr.net/gh/cdn-x/emoticons/qq/{name}.gif
+    aru: https://gcore.jsdelivr.net/gh/cdn-x/emoticons/aru-l/{name}.gif
+    tieba: https://gcore.jsdelivr.net/gh/cdn-x/emoticons/tieba/{name}.png
+  quot:
+    default: # 可以自行配置多种图标方案，支持icons.yml中配置的图片key，也支持直接设置svg/png等文件链接
+      prefix: bxs:quote-left
+      suffix: bxs:quote-right
+    hashtag:
+      prefix: solar:hashtag-square-bol
+######## Tag Plugins ########
