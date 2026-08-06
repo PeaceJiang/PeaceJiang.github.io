@@ -1,15 +1,54 @@
+/**
+ * app.js - Volantis 主题核心应用脚本
+ * 定义 VolantisApp、FancyBox 等核心功能。
+ * 依赖 global.ejs 中定义的 window.volantis 基础对象。
+ *
+ * 模块结构：
+ *   DOMContentLoaded      - 初始化 VolantisApp、FancyBox，注册 Pjax 回调
+ *   VolantisApp            - 主应用（导航栏、滚动、TOC、代码复制等）
+ *   highlightKeyWords      - 搜索关键字高亮
+ *   VolantisFancyBox       - 图片灯箱
+ */
+
+// 图片错误降级
+document.addEventListener("error", function (e) {
+  const elem = e.target;
+  if (elem.tagName.toLowerCase() !== 'img') return;
+  if (typeof elem.attributes.onerror !== "undefined") return;
+
+  const parentElem = elem.parentElement;
+  if (!parentElem) return;
+
+  const parentElemClass = parentElem.className;
+  const pParentElem = parentElem.parentElement;
+  if (!pParentElem) return;
+  const pParentElemClass = pParentElem.className;
+
+  elem.classList.add('fix-error');
+
+  if (parentElemClass === 'fancybox' && pParentElemClass === 'fancybox') {
+    pParentElem.classList.add('hideFancybox');
+    pParentElem.classList.remove('fancybox');
+    parentElem.classList.remove('fancybox');
+  } else if (parentElemClass === 'img-bg' && pParentElemClass === 'img-wrap') {
+    pParentElem.classList.add('hideFancybox');
+  }
+}, true);
+
+
+// DOMContentLoaded：初始化与 Pjax 注册
 document.addEventListener("DOMContentLoaded", function () {
   volantis.requestAnimationFrame(() => {
     VolantisApp.init();
     VolantisApp.subscribe();
     const fancyBoxInstance = new VolantisFancyBox();
-    fancyBoxInstance.bind('#post-body img:not([fancybox])');
+    fancyBoxInstance.bind('#post-body img[fancybox]');
     highlightKeyWords.startFromURL();
     locationHash();
 
     volantis.pjax.push(() => {
       VolantisApp.pjaxReload();
-      fancyBoxInstance.bind('#post-body img:not([fancybox])');
+      fancyBoxInstance.bind('#post-body img[fancybox]');
       sessionStorage.setItem("domTitle", document.title);
       highlightKeyWords.startFromURL();
     }, 'app.js');
@@ -17,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       volantis.dom.switcher.removeClass('active'); // 关闭移动端激活的搜索框
       volantis.dom.header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
       volantis.dom.wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
-      volantis.EventListener.remove() // 移除事件监听器 see: layout/_partial/scripts/global.ejs
+      volantis.EventListener.remove() // 移除事件监听器 see: global.js
     }, 'app.js');
   });
 });
@@ -47,7 +86,7 @@ const locationHash = () => {
 }
 Object.freeze(locationHash);
 
-/* Main */
+// Main：VolantisApp 主应用
 const VolantisApp = (() => {
   const fn = {},
     COPYHTML = '<button class="btn-copy" data-clipboard-snippet=""><i class="fa-solid fa-copy"></i><span>COPY</span></button>';
@@ -286,6 +325,7 @@ const VolantisApp = (() => {
     if (idname.length == 0) {
       idname = 'home';
     }
+    // 处理分页和索引页面
     var page = idname.match(/page\d{0,}$/g);
     if (page) {
       page = page[0];
@@ -296,8 +336,8 @@ const VolantisApp = (() => {
       index = index[0];
       idname = idname.split(index)[0];
     }
-    // 转义字符如 [, ], ~, #, @
-    idname = idname.replace(/(\[|\]|~|#|@)/g, '\\$1');
+    // 转义 CSS 选择器中的特殊字符
+    idname = CSS.escape(idname);
     if (idname && volantis.dom.headerMenu) {
       volantis.dom.headerMenu.forEach(element => {
         // idname 不能为数字开头, 加一个 action- 前缀
@@ -749,14 +789,13 @@ const VolantisApp = (() => {
 })()
 Object.freeze(VolantisApp);
 
-/* FancyBox */
+// 图片灯箱：FancyBox
 class VolantisFancyBox {
   constructor(checkMain = true) {
     this.option = {
       Hash: false,
       groupAll: true,
       caption: (fancybox, slide) => slide.thumbEl?.alt || "",
-      wheel: "slide",
       contentClick: 'iterateZoom',
       Thumbs: {
         showOnStart: false
@@ -764,14 +803,21 @@ class VolantisFancyBox {
       Images: {
         content: (_ref, slide) => {
           const imgElement = slide.thumbEl;
+          if (!imgElement) return '';
+
           const pictureElement = imgElement.closest('picture');
+          imgElement.classList.remove("content-in");
+
+          // 处理懒加载图片
           if (imgElement.hasAttribute('data-src')) {
             imgElement.setAttribute('src', imgElement.getAttribute('data-src'));
           }
+
           if (pictureElement) {
             pictureElement.classList.remove("lazy");
-            let sources = pictureElement.getElementsByTagName('source');
-            for (let source of sources) {
+            const sources = pictureElement.getElementsByTagName('source');
+            for (let i = 0; i < sources.length; i++) {
+              const source = sources[i];
               if (source.hasAttribute('data-srcset')) {
                 source.setAttribute('srcset', source.getAttribute('data-srcset'));
               }
@@ -782,10 +828,7 @@ class VolantisFancyBox {
           }
         },
         Panzoom: {
-          maxScale: 1.5,
-          panMode: "mousemove",
-          mouseMoveFactor: 1.1,
-          mouseMoveFriction: 0.12,
+          maxScale: 1
         }
       },
       Toolbar: {
@@ -804,28 +847,72 @@ class VolantisFancyBox {
         },
       }
     };
-    this.#init(checkMain);
+
+    if (checkMain) {
+      this.#init();
+    }
   }
 
-  #init(checkMain) {
-    if (!document.querySelector(".md .gallery img, .fancybox") && checkMain) return;
-    this.groupBind();
+  async #init() {
+    await this.loadFancybox();
+    if (document.querySelector(".md .gallery img, .fancybox")) {
+      this.groupBind();
+    }
   }
 
-  async #checkFancybox(done) {
+  async loadFancybox() {
     if (typeof Fancybox === "undefined") {
-      await volantis.css(volantis.GLOBAL_CONFIG.cdn.fancybox_css);
-      await volantis.js(volantis.GLOBAL_CONFIG.cdn.fancybox_js);
-      done.call(this);
-    } else {
-      done.call(this);
+      try {
+        await volantis.css(volantis.GLOBAL_CONFIG.cdn.fancybox_css);
+        await volantis.js(volantis.GLOBAL_CONFIG.cdn.fancybox_js);
+      } catch (error) {
+        console.error('Failed to load Fancybox:', error);
+      }
+    }
+  }
+
+  async bind(selectors) {
+    if (!selectors) return;
+
+    await this.loadFancybox();
+    if (typeof Fancybox !== 'undefined') {
+      Fancybox.unbind(selectors);
+      Fancybox.bind(selectors, this.option);
+      Fancybox.close();
+    }
+  }
+
+  async groupBind(selectors, groupName = 'default') {
+    await this.loadFancybox();
+    this.#elementHandling(selectors, groupName);
+
+    const group = new Set();
+    const galleries = document.querySelectorAll('.gallery');
+    for (let i = 0; i < galleries.length; i++) {
+      const ele = galleries[i];
+      if (ele.querySelector("img")) {
+        group.add(ele.getAttribute('data-group') || 'default');
+      }
+    }
+
+    if (groupName) group.add(groupName);
+
+    if (typeof Fancybox !== 'undefined') {
+      group.forEach(name => {
+        Fancybox.unbind(`[data-fancybox="${name}"]`);
+        Fancybox.bind(`[data-fancybox="${name}"]`, this.option);
+      });
     }
   }
 
   #elementHandling(selectors, groupName) {
     if (!selectors) return;
-    document.querySelectorAll(selectors).forEach($item => {
-      if ($item.hasAttribute('fancybox')) return;
+
+    const items = document.querySelectorAll(selectors);
+    for (let i = 0; i < items.length; i++) {
+      const $item = items[i];
+      if ($item.hasAttribute('fancybox')) continue;
+
       $item.setAttribute('fancybox', '');
       const $link = document.createElement('a');
       $link.setAttribute('href', $item.src || $item.dataset?.src);
@@ -834,35 +921,12 @@ class VolantisFancyBox {
       $link.classList.add('fancybox');
       $link.append($item.cloneNode());
       $item.replaceWith($link);
-    });
-  }
-
-  bind(selectors) {
-    this.#checkFancybox(() => {
-      Fancybox?.unbind(selectors);
-      Fancybox?.bind(selectors, this.option);
-    });
-  }
-
-  groupBind(selectors, groupName = 'default') {
-    this.#checkFancybox(() => {
-      this.#elementHandling(selectors, groupName);
-      const group = new Set();
-      document.querySelectorAll('.gallery').forEach(ele => {
-        if (ele.querySelector("img")) {
-          group.add(ele.getAttribute('data-group') || 'default');
-        }
-      });
-      if (groupName) group.add(groupName);
-      group.forEach(name => {
-        Fancybox?.unbind(`[data-fancybox="${name}"]`);
-        Fancybox?.bind(`[data-fancybox="${name}"]`, this.option);
-      });
-    });
+    }
   }
 }
 
-// highlightKeyWords 与 搜索功能搭配 https://github.com/next-theme/hexo-theme-next/blob/eb194a7258058302baf59f02d4b80b6655338b01/source/js/third-party/search/local-search.js
+
+// 搜索关键字高亮 highlightKeyWords 与 搜索功能搭配 https://github.com/next-theme/hexo-theme-next/blob/eb194a7258058302baf59f02d4b80b6655338b01/source/js/third-party/search/local-search.js
 const highlightKeyWords = (() => {
   let fn = {}
   fn.markNum = 0
@@ -1175,46 +1239,13 @@ const DOMController = {
 }
 Object.freeze(DOMController);
 
-// const VolantisRequest = {
-//   timeoutFetch: (url, ms, requestInit) => {
-//     const controller = new AbortController()
-//     requestInit.signal?.addEventListener('abort', () => controller.abort())
-//     let promise = fetch(url, { ...requestInit, signal: controller.signal })
-//     if (ms > 0) {
-//       const timer = setTimeout(() => controller.abort(), ms)
-//       promise.finally(() => { clearTimeout(timer) })
-//     }
-//     promise = promise.catch((err) => {
-//       throw ((err || {}).name === 'AbortError') ? new Error(`Fetch timeout: ${url}`) : err
-//     })
-//     return promise
-//   },
-
-//   Fetch: async (url, requestInit, timeout = 15000) => {
-//     const resp = await VolantisRequest.timeoutFetch(url, timeout, requestInit);
-//     if (!resp.ok) throw new Error(`Fetch error: ${url} | ${resp.status}`);
-//     let json = await resp.json()
-//     if (!json.success) throw json
-//     return json
-//   },
-
-//   POST: async (url, data) => {
-//     const requestInit = {
-//       method: 'POST',
-//     }
-//     if (data) {
-//       const formData = new FormData();
-//       Object.keys(data).forEach(key => formData.append(key, String(data[key])))
-//       requestInit.body = formData;
-//     }
-//     const json = await VolantisRequest.Fetch(url, requestInit)
-//     return json.data;
-//   },
-
-//   Get: async (url, data) => {
-//     const json = await VolantisRequest.Fetch(url + (data ? (`?${new URLSearchParams(data)}`) : ''), {
-//       method: 'GET'
-//     })
-//   }
-// }
-// Object.freeze(VolantisRequest);
+const oneLineCopy = (id, msg) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.select();
+      document.execCommand("Copy");
+      if (msg && msg.length > 0) {
+        // 弹窗提示
+      }
+    }
+}

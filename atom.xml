@@ -6,7 +6,7 @@
   <link href="https://peacejiang.github.io/atom.xml" rel="self"/>
   
   <link href="https://peacejiang.github.io/"/>
-  <updated>2026-07-27T12:00:20.507Z</updated>
+  <updated>2026-08-06T03:58:23.573Z</updated>
   <id>https://peacejiang.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>codex再探</title>
+    <link href="https://peacejiang.github.io/2026/08/03/codex%E5%86%8D%E6%8E%A2/"/>
+    <id>https://peacejiang.github.io/2026/08/03/codex%E5%86%8D%E6%8E%A2/</id>
+    <published>2026-08-03T06:54:34.000Z</published>
+    <updated>2026-08-06T03:58:23.573Z</updated>
+    
+    <content type="html"><![CDATA[<p>用codex做了点具体的任务，再谈谈codex的使用体验(●’◡’●)</p><span id="more"></span><h3 id="任务来源"><a href="#任务来源" class="headerlink" title="任务来源"></a>任务来源</h3><p>矿区的区域预测需要根据众多数据源进行特征提取，训练，最终得到预测结果。本研究确定好研究区，做好化探、物探、地质、遥感数据的预处理，通过codex实现预测。</p><h3 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h3><p>首先将预处理的文件整理整专门的文件夹中，以便于读取梳理。每一类数据已单独的文件夹存放，同时在每个文件夹中都有一个说明文档，用于说明该文件夹中的文件内容以用于后续的分析。</p><ol><li><p>第一步自行建立处理文档，将数据的预处理过程、目标要求、注意事项都写在文档中。使用codex读取文档，并要求它生成一个项目计划报告。</p></li><li><p>通过codex生成的项目计划报告，进行审阅，修正不合理的要求或者新增要求。注意codex需要调用的skills和mcp等外置插件。</p></li><li><p>根据修正后的项目计划报告，开始执行项目。此时的codex会根据计划报告中的要求，自动执行项目。</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy lazyload" src="https://pic1.imgdb.cn/i/0342D5L7mYniYWzrPz2sWx.png" class="lazyload" data-srcset="https://pic1.imgdb.cn/i/0342D5L7mYniYWzrPz2sWx.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://pic1.imgdb.cn/i/0342D5L7mYniYWzrPz2sWx.png" alt="任务截图"fancybox data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div><a class="image-download blur" style="opacity:0" target="_blank" download="任务截图" href="false"><svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3734"><path d="M561.00682908 685.55838913a111.03077546 111.03077546 0 0 1-106.8895062 0L256.23182837 487.72885783a55.96309219 55.96309219 0 0 1 79.13181253-79.18777574L450.70357448 523.88101491V181.55477937a55.96309219 55.96309219 0 0 1 111.92618438 0v344.06109173l117.07478902-117.07478901a55.96309219 55.96309219 0 0 1 79.13181252 79.18777574zM282.81429711 797.1487951h447.70473912a55.96309219 55.96309219 0 0 1 0 111.92618438H282.81429711a55.96309219 55.96309219 0 0 1 0-111.92618438z" p-id="3735"></path></svg></a></div><div class="image-meta"><span class="image-caption center">任务截图</span></div></div><p>上图看出，codex执行流程十分复杂，调用的子任务很多，同时也比较消耗token。</p></li></ol><h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><p>codex的运行结果可以说是无敌了<span class="tag-plugin emoji"><img no-lazy="" class="inline" src="https://gcore.jsdelivr.net/gh/cdn-x/emoticons/aru-l/0340.gif" style="height:2em"/></span><br>它除了能输出指定格式的文件外，还能输出项目的报告。在没有强行规定字数的情况下，它应该输出5000字左右的报告。</p><p>在前面的项目要求中可以约束输出报告的提纲、文字字体、图片内的文字要求等等。报告中的图片可以调用较好的skills来进行制图，报告结果位docx文档，排版合适。表格与文字排版符合要求，但有些多余的格式需要手动调整。</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy lazyload" src="https://pic1.imgdb.cn/i/0342E56h3NMla6kJy9is2N.png" class="lazyload" data-srcset="https://pic1.imgdb.cn/i/0342E56h3NMla6kJy9is2N.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://pic1.imgdb.cn/i/0342E56h3NMla6kJy9is2N.png" alt="报告总览"fancybox data-fancybox="true"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div><a class="image-download blur" style="opacity:0" target="_blank" download="报告总览" href="false"><svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3734"><path d="M561.00682908 685.55838913a111.03077546 111.03077546 0 0 1-106.8895062 0L256.23182837 487.72885783a55.96309219 55.96309219 0 0 1 79.13181253-79.18777574L450.70357448 523.88101491V181.55477937a55.96309219 55.96309219 0 0 1 111.92618438 0v344.06109173l117.07478902-117.07478901a55.96309219 55.96309219 0 0 1 79.13181252 79.18777574zM282.81429711 797.1487951h447.70473912a55.96309219 55.96309219 0 0 1 0 111.92618438H282.81429711a55.96309219 55.96309219 0 0 1 0-111.92618438z" p-id="3735"></path></svg></a></div><div class="image-meta"><span class="image-caption center">报告总览</span></div></div><p>比起Deep Seek，codex的报告生成能力要强得多。果然贵有贵的好处。如果DeepSeek 4 Pro 能够新增多模态并在执行任务中形成如此完善的报告，相信也具有很强的吸引力。<span class="tag-plugin emoji"><img no-lazy="" class="inline" src="https://gcore.jsdelivr.net/gh/cdn-x/emoticons/tieba/huaji.png" style="height:2em"/></span></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;用codex做了点具体的任务，再谈谈codex的使用体验(●’◡’●)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://peacejiang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="Codex" scheme="https://peacejiang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Codex/"/>
+    
+    
+    <category term="Vibe Coding" scheme="https://peacejiang.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="Codex" scheme="https://peacejiang.github.io/tags/Codex/"/>
+    
+  </entry>
   
   <entry>
     <title>codex初探</title>
@@ -155,9 +180,9 @@
     <category term="GIS软件应用" scheme="https://peacejiang.github.io/categories/3S%E6%8A%80%E6%9C%AF/GIS%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
     
     
-    <category term="ArcGIS" scheme="https://peacejiang.github.io/tags/ArcGIS/"/>
-    
     <category term="VSCode" scheme="https://peacejiang.github.io/tags/VSCode/"/>
+    
+    <category term="ArcGIS" scheme="https://peacejiang.github.io/tags/ArcGIS/"/>
     
     <category term="Arcpy" scheme="https://peacejiang.github.io/tags/Arcpy/"/>
     
