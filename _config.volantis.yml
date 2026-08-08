@@ -52,7 +52,7 @@ site_footer:
     - icon: fab fa-github
       url: https://github.com/PeaceJiang #你的github地址
   info: 
-  copyright: "由[Hexo](https://hexo.io/zh-cn/)驱动 | [腾讯云](https://cloud.tencent.com/) | [聚合图床](https://www.superbed.cn/)提供支持<br>[Copyright © 2023-2026 舆地纪要](/)"
+  copyright: "<a href='https://icp.gov.moe/?keyword=20266206' target='_blank'><i class='fa-solid fa-shield-halved'></i> 萌ICP备 20266206 号</a><br><i class='fa-solid fa-cube'></i> 由 <a href='https://hexo.io/zh-cn/' target='_blank'>Hexo</a> 驱动 | <i class='fa-solid fa-cloud'></i> <a href='https://cloud.tencent.com/' target='_blank'>腾讯云</a> | <i class='fa-solid fa-image'></i> <a href='https://www.superbed.cn/' target='_blank'>聚合图床</a> 提供支持<br><a href='/'><i class='fa-solid fa-copyright'></i> Copyright © 2023-2026 舆地纪要-GeoNotes</a>"
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: 
   # 自定义封面
@@ -202,6 +202,7 @@ sidebar:
       header:
         icon: fa-solid fa-clock WISTERIA
         title: 最近更新
+        max_count: 5
     related_posts:
         enable: false
         title: 相关文章
@@ -231,10 +232,29 @@ plugins:
     enable: true
     position: fixed       # cover: sticky on the cover.   fixed: Fixed as background for the site.
     shuffle: true         # shuffle playlist
-    duration: 60000       # Duration (ms)
-    fade: 1000            # fade duration (ms) (Not more than 1500)
-    images:               # For personal use only. At your own risk if used for commercial purposes !!!
-      - https://pic.imgdb.cn/item/64cb8a2c1ddac507cc0aade0.jpg
+    duration: 30000       # Duration (ms) - 30秒切换
+    fade: 1500            # fade duration (ms) - 淡入淡出1.5秒
+    images:               # Volantis 官方壁纸
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/001.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/002.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/003.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/004.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/005.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/006.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/012.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/016.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/019.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/025.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/034.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/035.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/038.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/039.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/042.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/046.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/051.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/052.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/054.webp
+      - https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/056.webp
   darkmode:
     enable: true
     
@@ -257,18 +277,6 @@ comments:
     theme:
       light: "light"
       dark: "dark"
-
-# Waline 已弃用，使用 Giscus
-# comments:  
-#   service: waline
-#   ...
-
-# Disqus 已弃用
-# comments:  
-#   service: disqus
-#   ...
-  
-  
 
 ############################### Comments ############################### > end
 
@@ -386,12 +394,12 @@ article:
       # 文章创建日期
       date:
         icon: fa-solid fa-calendar-alt
-        title: '发布于：'
+        title: '发布：'
         format: 'll' # 日期格式 http://momentjs.com/docs/
       # 文章更新日期
       updated:
         icon: fa-solid fa-edit
-        title: '更新于：'
+        title: '更新：'
         format: 'll' # 日期格式 http://momentjs.com/docs/
       # 文章分类
       category:
@@ -401,14 +409,6 @@ article:
         icon: fa-solid fa-eye
         unit: '次浏览'
       # waline 文章评论数量
-      walinecount:
-        icon: fa-solid fa-comment-dots
-        desc: '条评论' # 条评论
-      # artalk 文章评论数量
-      artalkcount:
-        icon: fa-solid fa-comment-dots
-        desc: '条评论' # 条评论
-      # 文章字数和阅读时长
       wordcount:
         icon_wordcount: fa-solid fa-keyboard
         icon_duration: fa-solid fa-hourglass-half
@@ -677,12 +677,11 @@ tag_plugins:
   icon:
     # 留空时，图标和文字颜色相同
     default_color: accent # theme, accent, red, orange, yellow, green, cyan, blue, purple
-    tag_plugins:
   emoji:
     default: https://gcore.jsdelivr.net/gh/cdn-x/emoticons/qq/{name}.gif
     twemoji: https://gcore.jsdelivr.net/gh/twitter/twemoji/assets/svg/{name}.svg
     qq: https://gcore.jsdelivr.net/gh/cdn-x/emoticons/qq/{name}.gif
-    aru: https://gcore.jsdelivr.net/gh/cdn-x/emoticons/aru-l/{name}.gif
+    aru: https://gcore.jsdelivr.net/gh/cdn-x/emoticons/aru/{name}.gif
     tieba: https://gcore.jsdelivr.net/gh/cdn-x/emoticons/tieba/{name}.png
   quot:
     default: # 可以自行配置多种图标方案，支持icons.yml中配置的图片key，也支持直接设置svg/png等文件链接

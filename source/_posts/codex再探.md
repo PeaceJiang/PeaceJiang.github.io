@@ -40,11 +40,11 @@ image:
 
 ### 执行结果
 
-codex的运行结果可以说是无敌了{% emoji aru 0340 height:2em %}
+codex的运行结果可以说是无敌了{% emoji aru aru0340 height:1.75em %}
 它除了能输出指定格式的文件外，还能输出项目的报告。在没有强行规定字数的情况下，它应该输出5000字左右的报告。
 
 在前面的项目要求中可以约束输出报告的提纲、文字字体、图片内的文字要求等等。报告中的图片可以调用较好的skills来进行制图，报告结果位docx文档，排版合适。表格与文字排版符合要求，但有些多余的格式需要手动调整。
 
 {% Image https://pic1.imgdb.cn/i/0342E56h3NMla6kJy9is2N.png 报告总览 download:false %}
 
-比起Deep Seek，codex的报告生成能力要强得多。果然贵有贵的好处。如果DeepSeek 4 Pro 能够新增多模态并在执行任务中形成如此完善的报告，相信也具有很强的吸引力。{% emoji tieba huaji height:2em %}
+比起Deep Seek，codex的报告生成能力要强得多。果然贵有贵的好处。如果DeepSeek 4 Pro 能够新增多模态并在执行任务中形成如此完善的报告，相信也具有很强的吸引力。{% emoji tieba huaji height:1.75em %}

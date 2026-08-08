@@ -8,12 +8,12 @@ sidebar: false
 twikoo:
   placeholder: 有什么想对我说的呢？
 ---
-{% banner 南河三 寓形宇内复几时，曷不委心任去留 avatar:https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg bg:https://res.xaox.cc/gh/cdn-x/xaoxuu@main/posts/20250706163949681.webp %}
+{% banner 南河三 寓形宇内复几时，曷不委心任去留 avatar:https://pic.imgdb.cn/item/64cb8a261ddac507cc0aa013.jpg bg:https://unpkg.com/volantis-static@0.0.1761982841160/media/wallpaper/minimalist/2020/033.webp %}
 {% endbanner %}
 
 {% note quote green:: 在广阔的世界里谋求和谐 %}
 
-{% quot el:h3 prefix:solar:planet-bold-duotone 博客内容 %}
+{% quot el:h3 prefix:solar:bookmark-bold 博客内容 %}
 
 该博客名为**《舆地纪要》**，“**舆地**”一词源自中国古代地理学之名，“**纪要**”一词代表笔记，该博客旨在分享笔者学习关于地理学的一些所学、所思、所感。
 
@@ -29,35 +29,37 @@ twikoo:
 
 {% timeline %}
 
-{% timenode 2023-07/至今 [中国地质调查局成都地质调查中心](http://www.chengdu.cgs.gov.cn/) %}
+{% timenode 2023-07/至今 %}
+
+[中国地质调查局成都地质调查中心](http://www.chengdu.cgs.gov.cn/)
 
 工程师
 
 {% endtimenode %}
 
-{% timenode 2020-09/2023-06 [首都师范大学](https://cnu.edu.cn/) %}
+{% timenode 2020-09/2023-06 %}
+
+[首都师范大学](https://cnu.edu.cn/)
 
 学院：[资源环境与旅游学院](https://cret.cnu.edu.cn/)
 
-专业：地图学与地理信息系统
-
-学位：理学 硕士
+地图学与地理信息系统
 
 {% endtimenode %}
 
-{% timenode 2016-09/2020-06 [四川师范大学](http://www.sicnu.edu.cn/) %}
+{% timenode 2016-09/2020-06 %}
+
+[四川师范大学](http://www.sicnu.edu.cn/)
 
 学院：[地理与资源科学学院](https://geo.sicnu.edu.cn/)
 
-专业：自然地理与资源环境(070502)
-
-学位：理学 学士
+自然地理与资源环境
 
 {% endtimenode %}
 
 {% endtimeline %}
 
-## 写在最后
+{% quot el:h3 prefix:solar:earth-bold-duotone 写在最后 %}
 
 欢迎大家在评论区对文章进行评论、建议、反馈等！！！
 

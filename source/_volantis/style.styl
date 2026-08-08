@@ -1,0 +1,13 @@
+// 文章卡片内边距调整
+// 原始值: padding: 1.5 * $gap (约 24px)
+// 修改为更大的内边距，让文本与卡片边缘有更舒适的间距
+
+#l_main .post
+  padding: 52px
+  @media screen and (max-width: $device-mobile)
+    padding: 16px
+
+// 文章正文段落行距
+// 原始值: line-height: inherit (继承 body 的 1.7)
+.article p
+  line-height: 2
