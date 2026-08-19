@@ -52,7 +52,7 @@ site_footer:
     - icon: fab fa-github
       url: https://github.com/PeaceJiang #你的github地址
   info: 
-  copyright: "<a href='https://icp.gov.moe/?keyword=20266206' target='_blank'><i class='fa-solid fa-shield-halved'></i> 萌ICP备 20266206 号</a><br><i class='fa-solid fa-cube'></i> 由 <a href='https://hexo.io/zh-cn/' target='_blank'>Hexo</a> 驱动 | <i class='fa-solid fa-cloud'></i> <a href='https://cloud.tencent.com/' target='_blank'>腾讯云</a> | <i class='fa-solid fa-image'></i> <a href='https://www.superbed.cn/' target='_blank'>聚合图床</a> 提供支持<br><a href='/'><i class='fa-solid fa-copyright'></i> Copyright © 2023-2026 舆地纪要-GeoNotes</a>"
+  copyright: "<a href='https://icp.gov.moe/?keyword=20266206' target='_blank'><i class='fa-solid fa-shield-halved'></i> 萌ICP备 20266206 号</a><br><i class='fa-solid fa-cube'></i> 由 <a href='https://hexo.io/zh-cn/' target='_blank'>Hexo</a> 驱动 | <i class='fa-solid fa-cloud'></i> <a href='https://cloud.tencent.com/' target='_blank'>腾讯云</a> | <i class='fa-solid fa-image'></i> <a href='https://www.superbed.cn/' target='_blank'>聚合图床 Cloudflare</a> 提供支持<br><a href='/'><i class='fa-solid fa-copyright'></i> Copyright 2023-2026 舆地纪要-GeoNotes</a>"
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: 
   # 自定义封面
@@ -93,10 +93,16 @@ artitalk:
 ############################### Sidebar ############################### > start
 sidebar:
   position: right # left right 侧边栏的位置
-  # 主页、分类、归档等独立页面
-  for_page: [blogger, category, tagcloud, webinfo, lastupdate] #侧边栏的组成部分
-  # layout: docs/post 这类文章页面
-  for_post: [blogger, toc]
+  # 站点主结构 Sidebar 配置
+  for:
+    # 主页配置
+    home: [blogger, category, tagcloud, lastupdate, webinfo]
+    # 博客列表页配置（归档、标签、分类）
+    index_blog: [blogger, webinfo]
+    # 博客文章内页配置
+    post: [blogger, toc]
+    # 其它自定义页面 layout: page
+    page: [blogger, toc]
   # 侧边栏组件库
   widget_library:
     # ---------------------------------------
@@ -147,7 +153,7 @@ sidebar:
       header:
         icon: fa-solid fa-folder-open
         title: 文章分类
-        url: /blog/categories/
+        url: /categories/
     # ---------------------------------------
     # tagcloud widget
     tagcloud:
@@ -156,7 +162,7 @@ sidebar:
       header:
         icon: fa-solid fa-tags
         title: 热门标签
-        url: /blog/tags/
+        url: /tags/
       min_font: 14
       max_font: 24
       color: true
@@ -166,7 +172,7 @@ sidebar:
     # webinfo widget
     webinfo:
       class: webinfo
-      display: [desktop]
+      display: [desktop, mobile]
       header:
         icon: fa-solid fa-award
         title: 站点信息

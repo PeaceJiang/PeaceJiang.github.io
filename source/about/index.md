@@ -25,8 +25,6 @@ twikoo:
 
 地理学背景及地质行业从业者，研究过时空数据挖掘，解决城市问题辅助城市规划。先从事地质行业，智能找矿预测，高光谱遥感等方面。
 
-{% quot el:h3 prefix:solar:planet-bold-duotone 学习背景 %}
-
 {% timeline %}
 
 {% timenode 2023-07/至今 %}
@@ -59,7 +57,7 @@ twikoo:
 
 {% endtimeline %}
 
-{% quot el:h3 prefix:solar:earth-bold-duotone 写在最后 %}
+{% quot el:h3 prefix:solar:planet-bold-duotone 写在最后 %}
 
 欢迎大家在评论区对文章进行评论、建议、反馈等！！！
 
